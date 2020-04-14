@@ -20,4 +20,4 @@ methods: require('/utils/methods.js').default
 
 在页面中  
 const { $https } = require('/utils/methods.js').default  
-使用的位置：app.methods.\$https(...)即可
+使用的位置：\$https(...)即可
