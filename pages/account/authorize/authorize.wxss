@@ -1,0 +1,104 @@
+page{
+  background: #fff;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 50rpx;
+}
+.logoImg{
+  display: block;
+  width: 300rpx;
+  height: 280rpx;
+  margin: 55rpx auto 0;
+}
+.section{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.section image{
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.section input{
+  flex: 1;
+  height: 100rpx;
+  padding-left: 80rpx;
+}
+.section .code{
+  line-height: 100rpx;
+  color: #F00806;
+}
+.section .code.disable{
+  color: #a8a8a8;
+}
+.checkbox{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx 0;
+  font-size: 26rpx;
+  color: #cccccc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.checkbox text{
+  color: #FE2C2B;
+}
+
+.welcome{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  color: #cccccc;
+  font-size: 28rpx;
+  margin-top: 50rpx;
+  line-height: 1.7;
+}
+.welcome text{
+  color: #FE2C2B;
+  margin-right: 10rpx;
+}
+
+.forget{
+  align-self: flex-end;
+  color: #C2C2C2;
+  font-size: 30rpx;
+  margin-top: 70rpx;
+}
+.sure{
+  width: 100%;
+  line-height: 80rpx;
+  color: #ffffff;
+  background: #fe893e;
+  font-size: 34rpx;
+  border-radius: 50rpx;
+  margin-top: 70rpx;
+}
+.cancle{
+  width: 100%;
+  line-height: 94rpx;
+  color: #a8a8a8;
+  font-size: 30rpx;
+  border-radius: 50rpx;
+}
+.sign{
+  font-size: 32rpx;
+  color: #333333;
+  margin-top: 50rpx;
+}
+.sign text{
+  color: #F00806;
+}

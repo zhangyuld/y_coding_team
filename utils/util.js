@@ -1,19 +1,94 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
+/*
+ * @Date         : 2020-03-20 14:51:18
+ * @LastEditors  : zhangyu
+ * @LastEditTime : 2020-05-10 23:55:39
+ * @Description  : 
+ */
+/**
+ * 工具类
+ */
 module.exports = {
-  formatTime: formatTime
-}
+
+  /**
+   * scene解码
+   */
+  scene_decode(e) {
+    if (e === undefined)
+      return {};
+    let scene = decodeURIComponent(e),
+      params = scene.split(','),
+      data = {};
+    for (let i in params) {
+      var val = params[i].split(':');
+      val.length > 0 && val[0] && (data[val[0]] = val[1] || null)
+    }
+    return data;
+  },
+
+  /**
+   * 格式化日期格式 (用于兼容ios Date对象)
+   */
+  format_date(time) {
+    // 将xxxx-xx-xx的时间格式，转换为 xxxx/xx/xx的格式 
+    return time.replace(/\-/g, "/");
+  },
+
+  /**
+   * 对象转URL
+   */
+  urlEncode(data) {
+    var _result = [];
+    for (var key in data) {
+      var value = data[key];
+      if (value.constructor == Array) {
+        value.forEach(_value => {
+          _result.push(key + "=" + _value);
+        });
+      } else {
+        _result.push(key + '=' + value);
+      }
+    }
+    return _result.join('&');
+  },
+
+  /**
+   * 遍历对象
+   */
+  objForEach(obj, callback) {
+    Object.keys(obj).forEach((key) => {
+      callback(obj[key], key);
+    });
+  },
+
+  /**
+   * 是否在数组内
+   */
+  inArray(search, array) {
+    for (var i in array) {
+      if (array[i] == search) {
+        return true;
+      }
+    }
+    return false;
+  },
+
+  /**
+   * 判断是否为正整数
+   */
+  isPositiveInteger(value) {
+    return /(^[0-9]\d*$)/.test(value);
+  },
+  // 切割数组
+  sliceArray: (arrs, options) => {
+    let result = [];
+    let { size } = options;
+    let index = 0;
+    let len = arrs.length;
+    let group = Math.ceil(len / size);
+    for (let i = 0; i < group; i++) {
+      result.push(arrs.splice(0, size));
+    }
+    return result;
+  },
+
+};

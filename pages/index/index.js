@@ -1,11 +1,11 @@
 /*
  * @Date         : 2020-03-20 14:51:18
  * @LastEditors  : zhangyu
- * @LastEditTime : 2020-04-13 21:18:01
+ * @LastEditTime : 2020-05-11 00:03:10
  * @Description  : 
  */
 const App = getApp();
-const methods = App.methods;
+const METHODS = require('../../utils/methods.js').default
 Page({
 
   data: {

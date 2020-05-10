@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/welcome/welcome",
     "pages/logs/logs"
   ],
   "window": {
@@ -9,6 +10,5 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
