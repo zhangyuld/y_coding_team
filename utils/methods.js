@@ -36,16 +36,16 @@ let $tabBarLinks = [
 // 防止重复点击
 let $singleClick = function(fn,params,timeout=500){
   let that = this;
-  if(that.throttle){
+  if(throttle){
     if(typeof fn == 'function'){
       fn();
     }else{
       that[fn](params)
     }
   }
-  that.throttle = false
+  throttle = false
   setTimeout(() => {
-    that.throttle = true
+    throttle = true
   },timeout)
 }
 // 获取分享者的id
@@ -88,6 +88,8 @@ let $showError = function(msg, callback) {
     }
   });
 }
+
+
 let $http = async function(opt, arg) {
   let that = this;
   let { showLoading=false,checkLogin=false} = arg;
@@ -156,6 +158,8 @@ let $http = async function(opt, arg) {
     return false
   }
 };
+
+
 let $request = (opt, arg) => {
   let that = this;
   let { showLoading=false,checkLogin=false} = arg;

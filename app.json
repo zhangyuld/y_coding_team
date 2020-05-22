@@ -1,13 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/welcome/welcome",
-    "pages/logs/logs"
+    "pages/account/authorize/authorize"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "我的项目",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
