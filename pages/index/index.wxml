@@ -1,3 +1,138 @@
+<import src="/template/goods/goods.wxml" />
+
+<loaded pageShow="{{pageShow}}"></loaded>
+
 <view class="appContainer">
-  
+	<y_search model="1" place="输入商品名称" url="pages/search/goods_his/goods_his" nav="{{true}}">
+		<view class="headAddress" bindtap="tapTest">
+			<text class="icon iconfont iconaddress_1 bold c-m"></text>
+			<view class="y_elli">合肥</view>
+		</view>
+	</y_search>
+  <y_swiper banner="{{banner}}" model="1" height="280" indicator="{{true}}"></y_swiper>
+  <y_menu list="{{menu}}" row="4"></y_menu>
+	<!-- 电商扶贫图 -->
+	<navigator hover-class="none" url="">
+		<image src="/images/help.png" mode="widthFix"></image>
+	</navigator>
+	<!-- 秒杀拼团部分入口 -->
+	<view class="activity flex">
+		<view class="section">
+			<view class="miao title flex flex-x-s">
+				<view class="bold f-32 mr-10">限时秒杀</view>
+				<view class="con flex"><text class="bg-red">10点场</text>12:21:12</view>
+			</view>
+			<view class="list miao">
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+					<view>¥<text>9.9</text></view>
+					<text>¥34</text>
+				</view>
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+					<view>¥<text>9.9</text></view>
+					<text>¥34</text>
+				</view>
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+					<view>¥<text>9.9</text></view>
+					<text>¥34</text>
+				</view>
+			</view>
+		</view>
+		<view class="section">
+			<view class="title flex flex-x-s">
+				<view class="bold f-32 mr-10">精彩直播</view>
+				<view class="con flex"><text class="bg-or">物美价廉</text></view>
+			</view>
+			<view class="list live">
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				</view>
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="section">
+			<view class="title flex flex-x-s">
+				<view class="bold f-32 mr-10">砍价0元拿</view>
+				<view class="con flex"><text class="bg-m">百亿补贴</text></view>
+			</view>
+			<view class="list live">
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				</view>
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				</view>
+			</view>
+		</view>
+		<view class="section">
+			<view class="title flex flex-x-s">
+				<view class="bold f-32 mr-10">拼团</view>
+				<view class="con flex"><text class="bg-tip">物美价廉</text></view>
+			</view>
+			<view class="list pin">
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+					<text>拼团价</text>
+					<view>¥<text>9.9</text></view>
+				</view>
+				<view class="item">
+					<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+					<text>拼团价</text>
+					<view>¥<text>9.9</text></view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 商学院 -->
+	<view>
+		<view class="title_c flex sizing pr-20">
+			<view class="con flex">商学院</view>
+			<navigator class="info flex" hover-class="none">
+				更多
+				<image src="/images/arrow_right.png"></image>
+			</navigator>
+		</view>
+		<scroll-view class="business y_flex" scroll-x enable-flex>
+			<view class="item">
+				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
+				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+			</view>
+			<view class="item">
+				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
+				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+			</view>
+			<view class="item">
+				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
+				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+			</view>
+			<view class="item">
+				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
+				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+			</view>
+		</scroll-view>
+	</view>
+
+	<!-- 商品部分 -->
+	<view>
+		<view class="title_c flex sizing pr-20">
+			<view class="con flex">助农商品</view>
+			<navigator class="info flex" hover-class="none">
+				更多
+				<image src="/images/arrow_right.png"></image>
+			</navigator>
+		</view>
+		<view class="list-container">
+			<template is="goods" data="" />
+		</view>
+		<view  class="no-content">
+			<image src="/images/empty2.png" mode="widthFix"></image>
+			<text class="cut-line">——没有找到相关的项目——</text>
+		</view>
+		<view class="more cut-line">——我是有底线的——</view>
+	</view>
 </view>

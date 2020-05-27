@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "y_search": "/components/search/search"
+  },
+  "navigationBarTitleText": "搜索"
+}

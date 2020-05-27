@@ -1,0 +1,11 @@
+/* pages/address/address.wxss */
+.address-wrap .item{margin: 20rpx auto;}
+.address-wrap .item .row{padding: 25rpx 30rpx;}
+.address-wrap .item .row .name{margin-bottom: 10rpx;}
+.address-wrap .item .operation{height: 90rpx;padding: 0 30rpx;}
+.address-wrap .item .operation .left radio{display: block;}
+.address-wrap .item .operation .left text{margin: 0 10rpx;}
+.address-wrap .item .operation .right .item{margin-left: 25rpx;}
+.address-wrap .item .operation .right .iconfont{margin-right: 10rpx;color: #9CA2AD;}
+
+.add_address{left: 0;right: 0;bottom: 0;line-height: 100rpx;}

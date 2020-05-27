@@ -1,0 +1,5 @@
+@import '/app.wxss';
+/* 类型一 */
+.menu{box-sizing: border-box;padding: 10rpx 20rpx;}
+.menu .item{padding: 20rpx 0;}
+.menu image{width: 90rpx;height: 90rpx;margin: 0 auto 15rpx;}

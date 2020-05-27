@@ -1,0 +1,15 @@
+<import src="/template/goods/goods.wxml" />
+
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer">
+  <y_search model="2" value="{{searchKey}}" place="输入商品名称" position="{{true}}" background="#F4F6FA" bind:searchConfirm="search"></y_search>
+  
+  <view class="nav y_flex_a"> 
+    <view class="item {{index == navIndex?'active':''}}" data-index='{{index}}' bindtap="navChoose" wx:for="{{nav}}" wx:key="index">{{item}}</view>
+  </view>
+
+  <view class="list-container">
+    <template is="goods" data=''></template>
+  </view>
+</view>

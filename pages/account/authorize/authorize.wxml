@@ -1,6 +1,6 @@
 <view class="container">
   <image class="logoImg" src="/images/logo.jpeg" mode="widthFix"></image>
-  <view class="welcome"><text>合肥诚泰</text>需要获取你的一些信息，包括头像、昵称等信息</view>
-  <button class="sure" hover-class="none" open-type="getUserInfo" bindgetuserinfo='authLogin' style="margin-top:30rpx;">微信快捷登录</button>
+  <view class="welcome"><text class="c-m">优享直播</text>需要获取你的一些信息，包括头像、昵称等信息</view>
+  <button class="sure bg-m" hover-class="none" open-type="getUserInfo" bindgetuserinfo='authLogin' style="margin-top:30rpx;">微信快捷登录</button>
   <button class="cancle" hover-class="none" bindtap="cancle">取消</button>
 </view>

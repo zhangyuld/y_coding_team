@@ -1,0 +1,5 @@
+<view class="loader" wx:if="{{!pageShow}}">
+  <view class="dot_wrap">
+    <view class="dot dot{{index+1}}" wx:for='{{textArr}}' wx:key='idx'><text class="text" style="animation-delay: 0.{{index+1}}s;">{{item}}</text></view>
+  </view>
+</view> 

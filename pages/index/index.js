@@ -1,55 +1,70 @@
-/*
- * @Date         : 2020-03-20 14:51:18
- * @LastEditors  : zhangyu
- * @LastEditTime : 2020-05-11 00:03:10
- * @Description  : 
- */
 const App = getApp();
-const METHODS = require('../../utils/methods.js').default
+const METHODS = require('../../utils/methods.js').default;
 Page({
 
   data: {
-    
+    banner:[
+      { id: 1, url: 'http://www.pinnoocle.net/static/index/img/banner1-min.png' },
+      { id: 2, url: 'http://www.pinnoocle.net/static/index/img/banner2-min.png' },
+      { id: 3, url: 'http://www.pinnoocle.net/static/index/img/banner3-min.png' },
+    ],
+    menu: [
+      {
+        id: "1",
+        image: "/images/menu1.png",
+        title: "水果",
+        url: "",
+      },{
+        id: "2",
+        image: "/images/menu2.png",
+        title: "坚果干果",
+        url: "",
+      },{
+        id: "3",
+        image: "/images/menu3.png",
+        title: "蔬菜",
+        url: "",
+      },{
+        id: "4",
+        image: "/images/menu4.png",
+        title: "农副产品",
+        url: "",
+      },{
+        id: "5",
+        image: "/images/menu5.png",
+        title: "肉禽蛋类",
+        url: "",
+      },{
+        id: "5",
+        image: "/images/menu6.png",
+        title: "海鲜水产",
+        url: "",
+      },{
+        id: "5",
+        image: "/images/menu7.png",
+        title: "速冻冷冻",
+        url: "",
+      },{
+        id: "5",
+        image: "/images/menu8.png",
+        title: "粮油食品",
+        url: "",
+      }
+    ],
   },
   onLoad: function (options) {
     let that = this;
-    that.getInfo();
+    that.setData({
+      pageShow: true
+    })
   },
-
   onShow: function () {
     
   },
-  getInfo:async function(){
-    let that = this;
-    let page = that.data.page;
-    let status = that.data.navIndex + 1;
-    await METHODS.$http(
-      {url: '/Wap/app/index',data: {page,status}},
-      {loading:true}
-    ).then(res => {
-      wx.stopPullDownRefresh()
-      
-    })
-  },
   skipPage(e){
-    METHODS.$confirmLogin(function(){
-      wx.requestSubscribeMessage({
-        tmplIds: ['Y4jRKC8M5_wkxjW7HrBTislBCgwnsJdraMqbwoBef08'],
-        success (res) {
-          let tmpId =  Object.keys(res)[0];
-          if(res[tmpId] == 'accept'){
-            let user_id = wx.getStorageSync('user_id');
-            let type = 'zp';
-            METHODS.$http(
-              {url: '/wap/app/addFormnum',data: { user_id,type }}
-            )
-          }
-          METHODS.$navigationTo(e);
-        }
-      })
-    })
-   
-    
+    let that = this;
+    let { url } = e.currentTarget.dataset;
+    METHODS.$navigationTo(url);
   },
   onPullDownRefresh: function () {
     

@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "y_search": "/components/search/search",
+    "y_swiper": "/components/swiper/swiper",
+    "y_menu": "/components/menu/menu"
+  }
 }

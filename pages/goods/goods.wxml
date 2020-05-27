@@ -1,0 +1,220 @@
+<!--pages/goodsDetail/goodsDetail.wxml-->
+<swiper class="swiper" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff" circular indicator-dots autoplay>
+	<swiper-item wx:for="{{goods.banner}}" wx:key="index">
+		<view class="img-wrap">
+			<image class="img" src="{{item.url}}" mode="widthFix"></image>
+		</view>
+	</swiper-item>
+</swiper>
+<view class="goods_info bg-ff">
+	<view class="flex flex-x-s">
+		<view class="flex-box">
+			<view class="price flex flex-x-s">
+				<view class="f-26 c-red "><text class="f-50 bold">￥{{goods.goodsSpec[0]['here_price']}}</text>/斤</view>
+				<view class="tips f-20 c-red bd-red ml-20">5000斤起</view>
+			</view>
+			<view class="name f30 bold ">{{goods.name}}</view>
+		</view>
+		<view class="head-share flex-dir-col flex-x-c c-a5 ml-30 mt-20 flex-k" data-type='choose' bindtap="shareHandle">
+			<span class="iconfont iconshare f-40"></span>
+			<text class="f-24">分享</text>
+		</view>
+	</view>
+	<view class="flex flex-x-s c-a5">
+		<view class="y_align_c f-26 mr-30"><text class="iconfont iconshouhuodizhi f-36 mr-10"></text>山东日照沙县</view>
+		<view class="y_align_c f-26"><text class="iconfont iconview f-36 mr-10"></text>86人看过</view>
+	</view>
+</view>
+
+<view class="bg-m flex c-ff sizing p-30">
+	<view class="flex-box">请选择优享在线交易</view>
+	<view class="flex f-26">
+		<view class="iconfont iconanquan mr-10"></view>
+		<view class="mr-20">资金更安全</view>
+		<view class="iconfont iconanquan mr-10"></view>
+		<view>售后有保障</view>
+	</view>
+</view>
+<view class="live flex bg-ff sizing p-30 mb-20">
+	<view class="flex flex-box">
+		<image class="logo radius-50 mr-20 flex-k" src="/images/menu1.png"></image>
+		<view class="flex-dir-col flex-y-s flex-box">
+			<view class="onelist f-30">直播间名称直播间名称直播间名称直播间名称直播间名称直播间名称</view>
+			<view class="tips c-m bd-m f-22 mt-10">直播中</view>
+		</view>
+	</view>
+	<view class="flex flex-k f-28 c-m ml-30">前往直播间<text class="iconfont iconarrow-right"></text></view>
+</view>
+
+<view class="head-spec flex flex-y-s f-28 bg-ff sizing p-30 b-b">
+	<view class="title">规格</view>
+	<view class="content flex-box">
+		<view class="flex">
+			<view>八斤打底</view>
+			<text>1.60元/斤</text>
+		</view>
+		<view class="flex">
+			<view>八斤打底</view>
+			<text>1.60元/斤</text>
+		</view>
+		<view class="flex">
+			<view>八斤打底</view>
+			<text>1.60元/斤</text>
+		</view>
+	</view>
+</view>
+<view class="head-spec flex f-28 bg-ff sizing p-30 mb-20">
+	<view class="title">规格</view>
+	<view class="flex-box onelist">整车·快递·物流专线·空运·其他:运费待商议</view>
+</view>
+
+<view class="store f-28 bg-ff sizing p-30 mb-20">
+	<view class="flex mb-20">
+		<view class="flex flex-box">
+			<image class="logo mr-20 flex-k" src="/images/menu1.png"></image>
+			<view class="flex-box">
+				<view class="onelist">店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称店铺名称</view>
+				<view class="flex flex-x-s f-20 mt-10">
+					<view class="bg-tip c-ff mr-10 ptb-5 plr-10">实人</view>
+					<view class="bg-or c-ff mr-10 ptb-5 plr-10">牛商2年</view>
+				</view>
+			</view>
+		</view>
+		<view class="store-btn flex flex-k ml-30">
+			<view class="item c-m mr-20">全部商品</view>
+			<view class="item bg-m c-ff">进点看看</view>
+		</view>
+	</view>
+	<view class="f-26 c-a5">本人常年供应各种水果原产地批发。全网最低价。质量有保障。</view>
+</view>
+
+<!-- 评论列表 -->
+<view class="appraise_wrap bg-ff mb-20">
+	<view class="tit flex b-b sizing p-30">
+		<text class="f-32 bold">精选点评</text>
+		<view class="f28 gray t-r flex c-m" data-url="pages/commentList/commentList" bindtap='skipPage'>更多评价<span class='iconfont iconxiangyoujiantou'></span></view>
+	</view>
+	<view class="appraise">
+		<view class="item b-b sizing flex sizing p-30">
+			<image class="logo radius-50" src="/images/menu1.png"></image>
+			<view class="info_wrap flex-box">
+				<view class="row flex mb-10">
+					<view class="left flex-box">
+						<view class="f-30 onelist mb-10">可可露露可可露露可可露露可可露露可可露露可可露露可可露露</view>
+						<view class="f-22 gray">2019-10-28 13:17:36</view>
+					</view>
+					<view class="right flex ml-30">
+						<view class="star flex-box flex">
+							<span class="iconfont f-28  {{goods.score >= item ? 'c-m iconstar':'c-a5 iconwujiaoxing2'}}" wx:for="{{[1,2,3,4,5]}}" wx:key="index"></span>
+						</view>
+					</view>
+				</view>
+				<view class="intro">效果不错，漂亮</view>
+				<view class="img_wrap flex">
+					<image src="/images/menu1.png"></image>
+					<image src="/images/menu1.png"></image>
+					<image src="/images/menu1.png"></image>
+					<image src="/images/menu1.png"></image>
+					<image src="/images/menu1.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="detail">
+	<view class="tit sizing b-b sizing p-30">
+		<text class="f-32 bold">商品详情</text>
+	</view>
+	<view class="editor">
+		<image src="http://mlc-xiaodian.oss-cn-shanghai.aliyuncs.com/dev/xd/upload/1/6/2019-08-24/5d60de95594db.jpg" mode="widthFix"></image>
+	</view>
+</view>
+
+<view class="height"></view>
+
+<view class="operation fixed flex t-c">
+	<view class="left flex">
+		<view class="item c-a5 f-20 sizing" data-url="pages/store/store" bindtap="skipPage">
+			<image src="/images/store.png"></image>
+			<text>店铺</text>
+		</view>
+		<view class="item f-20 c-a5 sizing" data-url="pages/cart/cart" bindtap="skipPage">
+			<image src="/images/chat.png"></image>
+			<text>聊一聊</text>
+		</view>
+		<view class="item f-20 c-a5 sizing" data-url="pages/cart/cart" bindtap="skipPage">
+			<image src="/images/cart.png"></image>
+			<text>购物车</text>
+		</view>
+	</view>
+	<view class="right flex flex-x-c flex-y-st">
+		<view class="item addCart white bg-or" data-type='choose' bindtap="shareHandle">分享赚</view>
+		<view class="item toBuy white bg-red" data-type='directBuy' bindtap="cartPoppupHandle">省钱购</view>
+	</view>
+</view>
+
+<!-- 选择属性弹窗 -->
+<view class="cart-pop">
+	<block wx:if="{{cartStatus}}">
+		<view class="cart-bg fixed" bindtap="cartPoppupHandle"></view>
+	</block>
+	<view class="cart-box" style="transform: {{cartStatus ? 'translateY(0)':'translateY(65vh)'}}">
+		<span class="iconfont iconcuowu" bindtap="cartPoppupHandle"></span>
+		<view class="goods-row flex sizing">
+			<image class="img" src="{{goods.banner[0].url}}"></image>
+			<view class="goods-right flex-box">
+				<view class="price flex">
+					<view class="new"><text class="tag">￥</text>{{spec_price}}</view>
+				</view>
+				<view class="stock flex">
+					<text class="currentAttr flex-box">当前选择：{{spec_attr_str}}</text>
+					<text>库存：{{spec_stock}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="mid-wrap">
+			
+			<block wx:if="{{goods.goodsSpec.length > 1}}">
+				<view class="stock-wrap">
+					<view class="text">规格</view>
+					<view class="stock-row flex">
+						<block wx:for="{{goods.goodsSpec}}" wx:key="index">
+							<view class="{{spec_name == (item.spec_name) ? 'item active':'item'}}" data-index="{{index}}" bindtap="specHandle">{{item.spec_name}}</view>
+						</block>
+					</view>
+				</view>
+			</block>
+			<block wx:for="{{goods.goodsAttr}}" wx:key="index">
+				<view class="stock-wrap">
+					<view class="text">{{item.attr_name}}</view>
+					<view class="stock-row flex">
+						<block wx:for="{{item.attr_son_arr}}" wx:for-item='attr' wx:for-index='attr_index' wx:key="index">
+							<view class="{{attr_arr[index] == attr ?'item active':'item'}}" data-index="{{index}}" data-attrindex="{{attr_index}}" bindtap="attrHandle">{{attr}}</view>
+						</block>
+					</view>
+				</view>
+			</block>
+      <view class="goods-num p-30 y_flex_b y_align_c">
+				<view class="text">购买数量</view>
+				<view class="num-wrap">
+					<view class="{{num == 1 ? 'item minus flex disabled' : 'item minus flex'}}" bindtap="{{num != 1 ? 'minusHandle':''}}">
+						<span class="iconfont iconjianshao1"></span>
+					</view>
+					<view class="item num flex">{{num}}</view>
+					<view class="item add flex" bindtap="addHandle">
+						<span class="iconfont icontianjia"></span>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="operation flex mt-50">
+			<view class="right flex flex-x-c flex-y-st">
+        <view class="item addCart white bg-or" data-type="addToCart" bindtap="confirmHandle">加入购物车</view>
+        <view class="item toBuy white bg-red" data-type='directBuy' bindtap="confirmHandle">直接购买</view>
+      </view>
+		</view>
+	</view>
+
+  <share status="{{shareStatus}}" code="{{codeImg}}"></share> 
+</view>

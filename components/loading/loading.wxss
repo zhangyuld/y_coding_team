@@ -1,0 +1,46 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot_wrap {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 35rpx 25rpx;
+}
+.loader .dot .text {
+  display: block;
+  margin: 0 2px;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+  animation: object 1s ease-in-out infinite;
+}
+@keyframes object {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

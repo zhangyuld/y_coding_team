@@ -1,0 +1,43 @@
+<!--pages/swiper/swiper.wxml-->
+<swiper class="swiper mb-30" autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color="{{indicator_active}}" circular='true' style="height: {{height}}rpx" wx:if="{{model == 1}}">
+  <block wx:for="{{banner}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.url}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<swiper class="swiper mb-30  custom-dot"  autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color="{{indicator_active}}" circular='true' style="height: {{height}}rpx" wx:if="{{model == 2}}">
+  <block wx:for="{{banner}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.url}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<swiper class="swiper mb-30  custom-dot2"  autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color="{{indicator_active}}" circular='true' style="height: {{height}}rpx" wx:if="{{model == 3}}">
+  <block wx:for="{{banner}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item.url}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="swiper-custom-wrap m-24"  wx:if="{{model == 4}}">
+  <swiper class="swiper  custom-dot3"  autoplay="{{auto}}" circular='true' bindchange='swiperChange'>
+    <block wx:for="{{banner}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item.url}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="current-dot white f-24 radius-50">{{current}}/{{banner.length}}</view>
+</view>
+
+<swiper class="swiper-margin"  autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color='{{indicator_active}}' circular='true' previous-margin='30px' next-margin='30px' bindchange='swiperChange2'  wx:if="{{model == 5}}">
+  <block wx:for="{{banner}}" wx:key="index">
+    <swiper-item class="item {{current2 == index ? 'active':'aaa'}}">
+      <image src="{{item.url}}"></image>
+    </swiper-item>
+  </block>
+</swiper>

@@ -335,14 +335,20 @@ let $confirmLogin = function(callback) {
 //跳转事件
 let $navigationTo = function(e){
   let that = this;
-  let url = e.currentTarget.dataset.url;
-  let check = e.currentTarget.dataset.check || false;
-  if(check){
-    let confirmLogin = that.$confirmLogin();
-    if(!confirmLogin){
-      return false;
+  let url;
+  if(typeof e == "string"){
+    url = e
+  }else{
+    url = e.currentTarget.dataset.url;
+    let check = e.currentTarget.dataset.check || false;
+    if(check){
+      let confirmLogin = that.$confirmLogin();
+      if(!confirmLogin){
+        return false;
+      }
     }
   }
+  
   if (!url || url.length == 0) {
     console.log('路径正确性校验')
     return false;

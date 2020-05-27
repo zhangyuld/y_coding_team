@@ -1,0 +1,12 @@
+
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer">
+  <y_search model="2" value="{{searchKey}}" place="输入商品名称" position="{{true}}" background="#F4F6FA" bind:searchConfirm="search"></y_search>
+  <view class="history">
+    <view class="item y_align_c" data-text='{{item.text}}' bindtap="historyTap" wx:for="{{history}}" wx:key="index">
+      <view class="time iconfont icontime1"></view>
+      <view class="con flex-box">{{item.text}}</view>
+    </view>
+  </view>
+</view>

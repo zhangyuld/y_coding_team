@@ -1,0 +1,35 @@
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="address-wrap">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <view class="item f-bg">
+      <view class="row sizing b-b">
+        <view class="name black f32">可可 13856565656</view>
+        <view class="info gray f26">望江路69号</view>
+      </view>
+      <view class="operation flex sizing f26">
+        <label class="left flex-box"><radio class="radio" color="#70BB2B"><text>默认地址</text></radio></label>
+        <view class="right flex">
+          <view class="item" data-url="pages/address/addressAdd/addressAdd" bindtap="skipPage"><span class='iconfont iconjiufuqianbaoicon04'></span>编辑</view>
+          <view class="item" bindtap="delHandle"><span class='iconfont iconjiufuqianbaoicon05'></span>删除</view>
+        </view>
+      </view>
+    </view>
+    <view class="item f-bg">
+      <view class="row sizing b-b">
+        <view class="name black f32">可可 13856565656</view>
+        <view class="info gray f26">望江路69号</view>
+      </view>
+      <view class="operation flex sizing f26">
+        <label class="left flex-box"><radio class="radio" color="#70BB2B"><text>默认地址</text></radio></label>
+        <view class="right flex">
+          <view class="item" data-url="pages/address/addressAdd/addressAdd" bindtap="skipPage"><span class='iconfont iconjiufuqianbaoicon04'></span>编辑</view>
+          <view class="item"><span class='iconfont iconjiufuqianbaoicon05'></span>删除</view>
+        </view>
+      </view>
+    </view>
+  </radio-group>
+</view>
+
+<view class="height"></view>
+<view class="add_address fixed m-bg white f32 t-c" data-url="pages/address/addressAdd/addressAdd" bindtap="skipPage">新增地址</view>
