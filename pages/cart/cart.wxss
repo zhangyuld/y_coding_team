@@ -1,1 +1,19 @@
-/* pages/cart/cart.wxss */
+page{ background: #F4F6FA; }
+
+.icon_wrap{float: right;width: 36rpx;height: 36rpx;justify-content: center;border:1px solid #ccc;margin-right: 20rpx;}
+
+.orderHead{ height: 80rpx;}
+
+.goods{ box-sizing: border-box; padding: 20rpx 30rpx; display: flex; flex-direction: row; align-items: center; border-bottom: 1px solid #eeeeee; }
+.goodsImg{ width: 160rpx; height: 160rpx; margin-right: 30rpx; flex-shrink: 0; }
+
+.goodsDetail{ flex: 1; height: 160rpx; display: flex; flex-direction: column; justify-content: space-between; }
+
+.specNum{ border: 1px solid #dcdcdc; }
+.specNum view{ width: 50rpx; height: 50rpx; line-height: 54rpx; text-align: center; font-size: 40rpx; }
+.specNum text{ border-left:1px solid #dcdcdc; border-right: 1px solid #dcdcdc; min-width: 80rpx; height: 50rpx; line-height: 56rpx; text-align: center; }
+
+
+.foot{ position: fixed; left: 0; bottom: 0; background: #fff; width: 100%; height: 100rpx; z-index: 10;}
+.footChoose{ display: flex; flex-direction: row; align-items: center; }
+.footBtn{ line-height: 100rpx; text-align: center; }

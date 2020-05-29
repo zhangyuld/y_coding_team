@@ -9,7 +9,8 @@
 .c-a5{ color: #A5A5A5!important; }
 
 .bg-m{ background: #70BB2B!important; }
-.bg-d{ background: #A6D977!important; }
+.bg-md{ background: #EAF2E2!important; }
+.bg-gray{background: #F4F6FA!important;}
 .bg-red{ background: #E5460A!important; }
 .bg-tip{ background: #37B6FF!important; }
 .bg-or{ background: #FEAB1E!important; }
@@ -17,15 +18,18 @@
 .bg-linear-b{ background: linear-gradient(to bottom,#70BB2B,#31A749); }
 
 .bd-m{ border: 1px solid #70BB2B!important; }
+.bd-or{ border: 1px solid #FEAB1E!important; }
 .bd-red{ border: 1px solid #E5460A!important; }
+
+
 /* lulu */
-.col-m { color: #70BB2B; } 
+.c-m { color: #70BB2B; } 
 .m-bg { background: #70BB2B; }
 .b-m { border: 1px solid #70BB2B; }
 
 
 /* 默认样式清除 */
-page { font-family: PingFang SC Medium, Heiti, Heiti SC, DroidSans, DroidSansFallback, "Microsoft YaHei", sans-serif,iconfont; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+page { font-family: PingFang SC Medium, Heiti, DroidSans, DroidSansFallback, "Microsoft YaHei", sans-serif,iconfont; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 
 .appContainer {display: block;height: 100%;box-sizing: border-box;font-size: 30rpx;color: #333;}
 .appContainerHide{height: 100vh;overflow: hidden;}

@@ -1,16 +1,16 @@
 <view class="headSearch" style="position: {{position?'fixed':'static'}};background: {{background}};" wx:if="{{model == 1}}">
   <slot></slot>
-  <view class="searchContent bc-m" bindtap="{{nav?'onConfirm':''}}">
-    <icon type="search" size="30rpx"></icon>
-    <input placeholder="{{place}}" value="{{searchKey}}" confirm-type="search" bindinput="onInput" bindconfirm="onConfirm" disabled="{{nav}}"></input>
-    <view class="btn bg-m c-ff f-28" catchtap="onConfirm">搜索</view>
+  <view class="searchContent" bindtap="{{nav?'onConfirm':''}}">
+    <icon class="icon" type="search" size="30rpx"></icon>
+    <input class="input" placeholder="{{place}}" value="{{searchKey}}" confirm-type="search" bindinput="onInput" bindconfirm="onConfirm" disabled="{{nav}}"></input>
+    <view class="btn" catchtap="onConfirm">搜索</view>
   </view>
 </view>
 
 <view class="headSearch" style="position: {{position?'fixed':'static'}};background: {{background}};" wx:if="{{model == 2}}">
-  <view class="searchContent bc-m">
-    <icon type="search" size="30rpx"></icon>
-    <input placeholder="{{place}}" value="{{searchKey}}" confirm-type="search" bindinput="onInput" bindconfirm="onConfirm"></input>
+  <view class="searchContent">
+    <icon class="icon" type="search" size="30rpx"></icon>
+    <input class="input" placeholder="{{place}}" value="{{searchKey}}" confirm-type="search" bindinput="onInput" bindconfirm="onConfirm"></input>
   </view>
   <view class="cancel" catchtap="cancel" wx:if="{{searchKey}}">取消</view>
 </view>

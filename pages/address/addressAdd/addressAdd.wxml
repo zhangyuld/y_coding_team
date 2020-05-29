@@ -22,10 +22,10 @@
 </view>
 
 <view class="add_address f-bg f31 black">
-	<view class="row flex b-b sizing">
+	<view class="row flex b-b sizing" bindtap="chooseDefault">
 		<view class="left">设为默认地址</view>
 		<view class="right flex-box">
-			<view class="icon_wrap flex radius-50 {{info.is_default ? 'm-bg':''}}" bindtap="chooseDefault"><span wx:if="{{info.is_default}}" class='iconfont iconzhengque white f28'></span></view>
+			<view class="icon_wrap flex radius-50 {{info.is_default ? 'm-bg':''}}" ><span wx:if="{{info.is_default}}" class='iconfont iconzhengque white f28'></span></view>
 		</view>
 	</view>
 </view>

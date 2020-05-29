@@ -1,0 +1,46 @@
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class='container'>
+  <view class='orderContainer'>
+    <block wx:for="{{list}}" wx:key="index">
+      <view class='goods flex' data-index='{{index}}' catchtap='goodsCheck'>
+        <view class="icon_wrap flex radius-50 {{item.checked ? 'bg-or bd-or':''}}" ><span wx:if="{{item.checked}}" class='iconfont iconzhengque white bold f26'></span></view>
+        <image class='goodsImg' src='{{item.img}}'></image>
+        <view class='goodsDetail flex-box flex-dir-col flex-x-b'>
+          <view class="onelist flex-box f-30lh-13">{{item.title}}</view>
+          <view class="flex-box onelist c-a8 f-24">规格：{{item.spec}}</view>
+          <view class='goodsCon flex'>
+            <text class="c-red f-30 ml-10 bold flex-k">￥{{item.price}}</text>
+            <view class='specNum flex flex-k '>
+              <view class="{{item.num==1?'c-e5':'c-99'}}" data-index='{{index}}' catchtap="{{item.num==1?'blankHandle':'reduceNum'}}">-</view>
+              <text class="f-28">{{item.num}}</text>
+              <view class="{{item.num==item.stock?'c-e5':'c-99'}}" data-index='{{index}}' catchtap="{{item.num==item.stock?'blankHandle':'addNum'}}">+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view  class="no-content">
+			<image src="/images/empty2.png" mode="widthFix"></image>
+			<text class="cut-line">——购物车空空如也,快去添加吧——</text>
+      <navigator class="btn bg-or lh-64 plr-50 radius-10 c-ff f-28 bold" hover-class="none" open-type="switchTab" url="/pages/index/index">去逛逛</navigator>
+		</view>
+		<view class="more cut-line">——我是有底线的——</view>
+  </view>
+
+  <view class="height"></view>
+  <view class='foot flex shadow-t'>
+    <view class='footChoose flex-k ml-30' catchtap='totalCheck'>
+      <view class="icon_wrap flex radius-50 {{totalCheck ? 'bg-or bd-or':''}}" >
+        <span wx:if="{{totalCheck}}" class='iconfont iconzhengque white bold f26'></span>
+      </view>
+      <text>全选</text>
+    </view>
+    <view class="ml-20 f-30 {{canDel?'c-red':'c-a8'}}" catchtap="{{canDel?'goodsDel':''}}">
+      <text>删除</text>
+    </view>
+    <view class='footCon flex-box t-r lh-14'>共计：<text class="c-red bold f-32">￥{{total}}</text></view>
+    <button class='footBtn flex-k bg-or c-ff bold plr-50 ml-20'>去结算</button>
+  </view>
+</view>

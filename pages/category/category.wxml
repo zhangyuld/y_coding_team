@@ -1,2 +1,39 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer">
+  <y_search model="2" value="{{searchKey}}" place="输入商品名称" position="{{true}}" background="#F4F6FA" bind:searchConfirm="search"></y_search>
+
+  <view class="scroll-container flex flex-y-s">
+    <scroll-view class="left" scroll-y>
+      <block wx:for='{{category}}' wx:key="index">
+        <view class="item f-28 onelist {{categoryIndex == index?'active c-m':''}}" data-index='{{index}}' data-id="cate{{item.id}}" bindtap="cateChoose"><text class="bg-m" wx:if="{{categoryIndex==index}}"></text>{{item.title}}</view>
+      </block>
+    </scroll-view>
+    <view class="right flex-box">
+      <view class="nav flex flex-x-s sizing plr-30 bg-ff">
+        <block wx:for="{{nav}}" wx:key="index">
+          <view class="item f-28 radius-5 {{navIndex == index? 'active bg-md c-m' : 'bg-gray'}}" data-index="{{index}}" bindtap="navChoose">{{item}}</view>
+        </block>
+      </view>
+      <scroll-view class="list" scroll-y scroll-into-view='{{scroll_id}}' bindscroll="scroll">
+        <block wx:for='{{category}}' wx:key="index">
+          <view id="cate{{item.id}}"></view>
+          <block wx:for="{{item.children}}" wx:key="index" wx:for-item="it" wx:for-index="idx">
+            <view class="item flex flex-y-st sizing p-30" data-url='pages/goods/goods?id={{it.id}}' bindtap="skipPage">
+              <view class="img-con mr-20 radius-10">
+                <image class="logo" src="{{it.logo}}"></image>
+              </view>
+              <view class="detail flex-box flex-dir-col flex-x-b">
+                <view class="title twolist lh-13">{{it.title}}</view>
+                <view class="info flex"> 
+                  <view class="price f-26 c-red">¥<text class="f-36 bold">{{it.price}}</text><text class="c-a5">/起</text></view>
+                  <view class="btn c-ff f-24 radius-50 ptb-15 plr-20 bold bg-or">马上抢</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </block>
+      </scroll-view>      
+    </view>
+  </view>
+</view>

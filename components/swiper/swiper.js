@@ -16,6 +16,10 @@ Component({
       type: String,
       value: "1"
     },
+    width: {
+      type: String,
+      value: "750"
+    },
     height:{
       type: String,
       value: "200"
@@ -41,7 +45,10 @@ Component({
    * 私有数据, 组件的初始数据
    * 可用于模版渲染
    */
-  data: {},
+  data: {
+    current: 1,
+    current2: 0
+  },
   /**
    * 组件生命周期
    * created: 组件创建完毕
@@ -57,5 +64,16 @@ Component({
    * 组件的方法列表
    * 更新属性和数据的方法与更新页面数据的方法类似
    */
-  methods: {}
+  methods: {
+    swiperChange(e){
+      this.setData({
+        current: e.detail.current + 1
+      })
+    },
+    swiperChange2(e){
+      this.setData({
+        current2: e.detail.current
+      })
+    },
+  }
 });

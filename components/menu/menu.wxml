@@ -1,6 +1,6 @@
-<view class="menu flex t-c col-3 f-30">
-	<view class="item onelist" data-path="{{item.url}}" bindtap="toPath" wx:for="{{list}}" wx:key="index" style="width: {{100 / itemRatio}}%">
-		<image class="radius-50 block" src="{{item.image}}"></image>
-		<text class="title onelist f-26">{{item.title}}</text>
+<view class="menu">
+	<view class="item" data-path="{{item.url}}" bindtap="toPath" wx:for="{{list}}" wx:key="index" style="width: {{100 / itemRatio}}%">
+		<image class="logo" src="{{item.image}}"></image>
+		<text class="title">{{item.title}}</text>
 	</view>	
 </view>

@@ -1,1 +1,15 @@
-/* pages/category/category.wxss */
+page{ background: #F4F6FA; }
+.scroll-container{ width: 100%; height: calc(100vh - 100rpx); background: #fff;}
+
+.scroll-container .left{ width: 200rpx; height: 100%;background: #F4F6FA; }
+.scroll-container .left .item{width: 100%;height: 100rpx;line-height: 100rpx;box-sizing: border-box;padding: 0 20rpx 0 30rpx;position: relative;}
+.scroll-container .left .item.active{background: #fff;}
+.scroll-container .left .item text{position: absolute;top: 50%;left: 0;transform: translateY(-50%);width: 15rpx;height: 30rpx;}
+
+.scroll-container .right{height: 100%;}
+.scroll-container .right .nav{ width: 100%; height: 100rpx; }
+.scroll-container .right .nav .item{line-height: 56rpx;padding: 0 20rpx;margin-right: 30rpx;}
+.scroll-container .right .nav .item:last-child{margin-right: 0rpx;}
+.scroll-container .right .list{width: 100%;height: calc(100% - 100rpx);}
+.scroll-container .right .list .item .img-con{width: 140rpx;height: 140rpx;}
+.scroll-container .right .list .item .img-con image{width: 100%;height: 100%;}

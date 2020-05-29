@@ -5,6 +5,7 @@
     "pages/category/category",
     "pages/live/live",
     "pages/cart/cart",
+    "pages/cart_single/cart_single",
     "pages/mine/mine",
     "pages/search/goods_his/goods_his",
     "pages/search/goods/goods",

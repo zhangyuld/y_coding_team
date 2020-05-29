@@ -7,6 +7,8 @@ page{ background: #F4F6FA; }
 .headAddress .icon{font-size: 36rpx;margin-right: 6rpx;}
 .headAddress view{font-size: 30rpx;white-space: nowrap;}
 
+.swiper{width: 710rpx;margin: 0 auto;}
+
 /* 秒杀拼团部分入口 */
 .activity{width: 710rpx;background: #fff;margin: 30rpx auto;border-radius: 25rpx;}
 .activity .section{width: 50%;align-items: stretch;box-sizing: border-box;padding: 30rpx 20rpx;}

@@ -1,9 +1,6 @@
-@import '/app.wxss';
-
-page{padding-bottom: 50rpx;}
 /* 默认 */
-.swiper{width: calc(100vw - 48rpx);height: 230rpx;border-radius: 10rpx;margin-left: auto;margin-right: auto;}
-.swiper image{display: block;width: 100%;height: 100%;border-radius: 10rpx;}
+.swiper{width: 100%;height: 230rpx;border-radius: 10rpx;margin-left: auto;margin-right: auto;}
+.swiper .banner{display: block;width: 100%;height: 100%;border-radius: 10rpx;}
 
 /* 第二个 */
 .custom-dot .wx-swiper-dot-active{width: 40rpx !important;border-radius: 25rpx !important;}  
@@ -14,12 +11,12 @@ page{padding-bottom: 50rpx;}
 
 /* 第四个 */
 .swiper-custom-wrap{position: relative;}
-.current-dot{position: absolute;right: 12rpx;bottom: 12rpx;background-color: rgba(0,0,0,.45);line-height: 35rpx;padding: 0 15rpx;}
+.current-dot{position: absolute;right: 12rpx;bottom: 12rpx;background-color: rgba(0,0,0,.45);line-height: 35rpx;padding: 0 15rpx;color: #fff;font-size: 24rpx;border-radius: 50rpx;}
 
 .swiper-margin{width: 100vw;height: 200rpx;}
-.swiper-margin swiper-item{top: 15rpx;height: 170rpx;transform: all .5s linear;}
-.swiper-margin swiper-item image{display: block;width: calc(100% - 20rpx);height: 170rpx;margin: 0 auto;border-radius: 10rpx;overflow: hidden;}
+.swiper-margin .item{top: 15rpx;height: 170rpx;transform: all .5s linear;}
+.swiper-margin .item .banner{display: block;width: calc(100% - 20rpx);margin: 0 auto;border-radius: 10rpx;overflow: hidden;}
 .swiper-margin .active{top: 0;height: 200rpx;} 
-.swiper-margin .active image{display: block;height: 200rpx;}
+.swiper-margin .active .banner{display: block;height: 100%;}
 .swiper-margin .wx-swiper-dot{width: 30rpx !important;height: 8rpx !important;border-radius: 25rpx !important;margin: 0 -5rpx;}
-.swiper-margin .wx-swiper-dot-active{width: 40rpx !important;}  
+.swiper-margin .wx-swiper-dot-active{width: 40rpx!important;}  
