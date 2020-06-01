@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "share": "/components/share/share"
+    "share": "/components/share/share",
+    "y_title": "/components/title/title"
   }
 }

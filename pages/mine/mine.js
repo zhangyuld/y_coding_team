@@ -1,25 +1,21 @@
 const App = getApp();
-const METHODS = require('../../utils/methods.js').default;
+const METHODS = require("../../utils/methods.js").default;
 
 Page({
-
-  data: {
-
-  },
+  data: {},
 
   onLoad: function (options) {
     let that = this;
     that.setData({
-      pageShow: true
-    })
-
+      pageShow: true,
+    });
   },
 
-  onShow: function () {
-
+  onShow: function () {},
+  skipPage(e){
+    //METHODS.$confirmLogin(function(){
+      METHODS.$navigationTo(e)
+    //})
   },
-
-  onShareAppMessage: function () {
-
-  }
-})
+  onShareAppMessage: function () {},
+});

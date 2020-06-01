@@ -67,6 +67,8 @@
 /* 底部操作栏 */
 .footer-fixed {z-index: 98;position: fixed;bottom: 0;left: 0;right: 0;display: flex;height: 92rpx;box-shadow: 0 -2px 20rpx 0 rgba(144, 52, 52, 0.1);background: #ffffff;}
 
+/*间隔色彩分割线*/
+.line-after::after{content: '';position: absolute;left: 0;right: 0;bottom: 0;height: 10rpx;background: linear-gradient(45deg, #EC5151 0%, #EC5151 5%, #fff 5%, #fff 7.5%, #32BDDE 7.5%, #32BDDE 12.5%, #fff 12.5%, #fff 15%, #EC5151 15%, #EC5151 20%, #fff 20%, #fff 22.5%, #32BDDE 22.5%, #32BDDE 27.5%, #fff 27.5%, #fff 30%, #EC5151 30%, #EC5151 35%, #fff 35%, #fff 37.5%, #32BDDE 37.5%, #32BDDE 42.5%, #fff 42.5%, #fff 45%, #EC5151 45%, #EC5151 50%, #fff 50%, #fff 52.5%, #32BDDE 52.5%, #32BDDE 57.5%, #fff 57.5%, #fff 60%, #EC5151 60%, #EC5151 65%, #fff 65%, #fff 67.5%, #32BDDE 67.5%, #32BDDE 72.5%, #fff 72.5%, #fff 75%, #EC5151 75%, #EC5151 80%, #fff 80%, #fff 82.5%, #32BDDE 82.5%, #32BDDE 87.5%, #fff 87.5%, #fff 90%, #EC5151 90%, #EC5151 95%, #fff 95%, #fff 97.5%, #32BDDE 97.5%, #32BDDE 102.5%);}
 
 /* 编辑器样式 */
 .editor{width: 100%;box-sizing: border-box;padding: 30rpx;}
@@ -96,8 +98,22 @@
 .radius-5 { border-radius: 5rpx; overflow: hidden; }
 .radius-8 { border-radius: 8rpx; overflow: hidden; }
 .radius-10 { border-radius: 10rpx; overflow: hidden; }
+.radius-20 { border-radius: 20rpx; overflow: hidden; }
 .radius-50 { border-radius: 500rpx; overflow: hidden; }
 .radius-all { border-radius: 50%; overflow: hidden; }
+
+/*正方形盒子*/
+.box-80{width: 80rpx;height: 80rpx;}
+.box-100{width: 100rpx;height: 100rpx;}
+.box-110{width: 110rpx;height: 110rpx;}
+.box-120{width: 120rpx;height: 120rpx;}
+.box-140{width: 140rpx;height: 140rpx;}
+.box-150{width: 150rpx;height: 150rpx;}
+.box-160{width: 160rpx;height: 160rpx;}
+.box-180{width: 180rpx;height: 180rpx;}
+.box-200{width: 200rpx;height: 200rpx;}
+.box-220{width: 220rpx;height: 220rpx;}
+.box-240{width: 240rpx;height: 240rpx;}
 
 /* 超出换行 */
 .onelist { display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }

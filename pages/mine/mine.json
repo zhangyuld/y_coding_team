@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "y_title": "/components/title/title"
+  },
   "navigationBarTitleText": "我的",
   "navigationBarBackgroundColor": "#70BB2B",
   "navigationBarTextStyle": "white"

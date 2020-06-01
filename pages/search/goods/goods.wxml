@@ -5,11 +5,13 @@
 <view class="appContainer">
   <y_search model="2" value="{{searchKey}}" place="输入商品名称" position="{{true}}" background="#F4F6FA" bind:searchConfirm="search"></y_search>
   
-  <view class="nav flex flex-x-a"> 
-    <view class="item bold {{index == navIndex?'active':''}}" data-index='{{index}}' bindtap="navChoose" wx:for="{{nav}}" wx:key="index">{{item}}</view>
+  <view class="nav bg-ff flex flex-x-a"> 
+    <block wx:for="{{nav}}" wx:key="index">
+      <view class="flex-k t-c lh-90 relative onelist f-32 flex-four {{navIndex == index?'active c-m ':''}}" data-index="{{index}}" bindtap="navChoose">{{item}}</view>
+    </block>
   </view>
 
-  <view class="list-container">
+  <view class="list-container  sizing plr-30">
     <template is="goods" data=''></template>
   </view>
 </view>

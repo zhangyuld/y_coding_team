@@ -1,54 +1,33 @@
+<import src="/template/goods/goods.wxml" /> 
+
 <loaded pageShow="{{pageShow}}"></loaded>
 
-<view wx:if="{{address}}" class="address flex sizing relative" data-url='pages/address/address/address' bindtap="skipPage">
-	<span class="iconfont iconshouhuodizhi black bold f34"></span>
+<view wx:if="{{!address}}" class="address flex sizing p-30 relative line-after bg-ff" data-url='pages/address/address/address' bindtap="skipPage">
+	<span class="iconfont iconshouhuodizhi black bold f34 flex-k mr-20"></span>
 	<view class="right flex-box flex sizing">
 		<view class="right-info flex-box">
 			<view class="name black f32 bold">哈哈 15252525252</view>
 			<view class="tel gray f26">安徽省合肥市蜀山区望江路69号</view>
 		</view>
-		<span class="iconfont iconxiangyoujiantou gray f28"></span>
+		<span class="iconfont iconxiangyoujiantou gray f28 flex-k ml-20"></span>
 	</view>
 </view>
-<view wx:else class="address flex sizing relative" data-url='pages/address/address/address' bindtap="skipPage">
-	<span class="iconfont iconshouhuodizhi black bold f34"></span>
+<view wx:else class="address flex sizing p-30 relative line-after bg-ff" data-url='pages/address/address/address' bindtap="skipPage">
+	<span class="iconfont iconshouhuodizhi black bold f34 flex-k mr-20"></span>
 	<view class="right flex-box flex sizing">
 		<view class="right-info flex-box">
 			<view class="name black f32">请选择地址</view>
 		</view>
-		<span class="iconfont iconxiangyoujiantou gray f28"></span>
+		<span class="iconfont iconxiangyoujiantou gray f28 flex-k ml-20"></span>
 	</view>
 </view>
 
-<view class='goods_list sizing bg-ff'>
-	<!-- <view class='tit black f30 b-b'>订单商品</view> -->
-	<view class='goods_item flex flex-y-st sizing b-b'>
-		<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
-		<view class='goods_right flex-dir-col flex-x-b flex-box'>
-			<view class='name f-32 onelist'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
-			<view class='attr f-26 gray onelist'>小型+常温+常规辣</view>
-			<view class='info flex'>
-				<view class='left flex-box flex'>
-					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
-				</view>
-				<view class='num f-26 gray'>x1</view>
-			</view>
-		</view>
-	</view>
-  <view class='goods_item flex flex-y-st sizing b-b'>
-		<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
-		<view class='goods_right flex-dir-col flex-x-b flex-box'>
-			<view class='name f-32 onelist'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
-			<view class='attr f-26 gray onelist'>小型+常温+常规辣</view>
-			<view class='info flex'>
-				<view class='left flex-box flex'>
-					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
-				</view>
-				<view class='num f-26 gray'>x1</view>
-			</view>
-		</view>
-	</view>
-  <view class='tit f30 b-b t-r'>共2件商品,合计：<text class="c-red">¥398.00</text></view>
+<view class='goods_list sizing plr-30 bg-ff mtb-20'>
+	<view class='tit black f30 b-b lh-100'>商品列表</view>
+	
+	<template is="order_goods" ></template>
+
+  <view class='tit f30 b-b t-r lh-80'>共2件商品,合计：<text class="c-red bold">¥398.00</text></view>
 </view>
 
 <view class="discount bg-ff f28 col-3">

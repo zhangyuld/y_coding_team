@@ -1,0 +1,26 @@
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer">
+  <view class="flex bg-ff p-30 b-b">
+    <view class="f-28 flex-k mr-20">头像</view>
+    <view class="flex flex-x-e flex-box">
+      <image class="radius-all" src="{{info.logo}}" style="width: 110rpx;height: 100rpx" data-type="logo" bindtap="chooseImage"></image>
+      <span class="iconfont iconarrow-right flex-k f-30 c-a8 ml-20"></span>
+    </view> 
+  </view>
+  <view class="flex bg-ff p-30 b-b">
+    <view class="f-28 flex-k mr-20">昵称</view>
+    <view class="flex flex-x-e flex-box">
+      <input class="flex-box t-r f-28 c-99" type="text" placeholder="请输入姓名" value="{{info.name}}" data-type="name" bindinput="onInput"></input>
+      <span class="iconfont iconarrow-right flex-k f-30 c-a8 ml-20"></span>
+    </view> 
+  </view>
+  <view class="flex bg-ff p-30 b-b">
+    <view class="f-28 flex-k mr-20">手机号</view>
+    <view class="flex flex-x-e flex-box">
+      <input class="flex-box t-r f-28 c-99" type="number" placeholder="请输入手机号" value="{{info.phone}}" data-type="phone" bindinput="onInput"></input>
+      <span class="iconfont iconarrow-right flex-k f-30 c-a8 ml-20"></span>
+    </view> 
+  </view>
+  <view class="btn lh-80 t-c f-28 bold bg-or c-ff m-30 mt-50" bindtap="sure">确认</view>
+</view>

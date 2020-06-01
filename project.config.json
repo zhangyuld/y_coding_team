@@ -5,13 +5,14 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": true,
+		"es6": false,
 		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": true,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -22,7 +23,9 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.3",
@@ -88,8 +91,22 @@
 				},
 				{
 					"id": -1,
+					"name": "店铺详情",
+					"pathName": "pages/store/store",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "商品分类",
 					"pathName": "pages/category/category",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "直播列表",
+					"pathName": "pages/live/live",
 					"query": "",
 					"scene": null
 				},
@@ -111,6 +128,28 @@
 					"id": -1,
 					"name": "个人中心",
 					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账号设置",
+					"pathName": "pages/mine/setting/setting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "订单中心",
+					"pathName": "pages/order/order/order",
+					"query": "type=all",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/order/orderDetail/orderDetail",
+					"query": "",
 					"scene": null
 				}
 			]

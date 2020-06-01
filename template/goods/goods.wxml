@@ -1,14 +1,88 @@
 <template name="goods">
-  <view class="goods-item flex flex-y-st" data-url='pages/goods/goods' bindtap="skipPage">
-    <view class="logo relative">
+  <view class="goods-item flex flex-y-st sizing ptb-30 b-b" data-url='pages/goods/goods' bindtap="skipPage">
+    <view class="logo relative flex-k box-240 mr-20 radius-20">
       <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
     </view>
     <view class="detail flex-dir-col flex-x-b flex-box">
       <view class="title twolist lh-14">商品名称商品名称商品名称商品名称商品商品名称商品名称商品名称商品名称商品</view>
-      <view class="text">已销售654件</view>
+      <view class="text f-26 c-a5 onelist">已销售654件</view>
       <view class="info flex">
         <view class="price c-red f-26">¥<text class="f-36 y_bold">11.8</text></view>
-        <view class="btn btn bg-or f-24">进入直播间</view>
+        <view class="btn bg-or f-24">进入直播间</view>
+      </view>
+    </view>
+  </view>
+  <view class="goods-item flex flex-y-st sizing ptb-20 b-b" data-url='pages/goods/goods' bindtap="skipPage">
+    <view class="logo relative flex-k box-240 mr-20 radius-20">
+      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+    </view>
+    <view class="detail flex-dir-col flex-x-b flex-box">
+      <view class="title twolist lh-14">商品名称商品名称商品名称商品名称商品商品名称商品名称商品名称商品名称商品</view>
+      <view class="text f-26 c-a5 onelist">已销售654件</view>
+      <view class="info flex">
+        <view class="price c-red f-26">¥<text class="f-36 y_bold">11.8</text></view>
+        <view class="btn bg-or f-24">进入直播间</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+
+<template name="order_goods">
+  <view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
+    <view class="logo relative flex-k box-150 mr-20 radius-20 ">
+      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+    </view>
+		<view class='detail flex-dir-col flex-x-b flex-box'>
+			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
+			<view class='info flex'>
+				<view class='left flex-box flex'>
+					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
+				</view>
+				<view class='num f-26 gray'>x1</view>
+			</view>
+		</view>
+	</view>
+  <view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
+    <view class="logo relative flex-k box-150 mr-20 radius-20 ">
+      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+    </view>
+		<view class='detail flex-dir-col flex-x-b flex-box'>
+			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
+			<view class='info flex'>
+				<view class='left flex-box flex'>
+					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
+				</view>
+				<view class='num f-26 gray'>x1</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<template name="goods_two">
+  <view class="goods-two bg-ff ml-30 mb-30">
+    <view class="logo relative flex-k box-150 radius-20 ">
+      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+    </view>
+    <view class="detail flex flex-dir-col flex-x-b flex-y-s sizing plr-20">
+      <view class="twolist mt-15">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+      <view class="info flex mt-15">
+        <view class="f-26 c-a5"><text class="c-red">¥</text><text class="c-red f-36 bold">11.8</text>/起</view>
+        <view class="bg-or f-26 lh-60 c-ff radius-50 plr-20">马上抢</view>
+      </view>
+    </view>
+  </view>
+  <view class="goods-two bg-ff ml-30 mb-30">
+    <view class="logo relative flex-k box-150 radius-20 ">
+      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+    </view>
+    <view class="detail flex flex-dir-col flex-x-b flex-y-s sizing plr-20">
+      <view class="twolist mt-15">迷你喷雾迷你喷</view>
+      <view class="info flex mt-15">
+        <view class="f-26 c-a5"><text class="c-red">¥</text><text class="c-red f-36 bold">11.8</text>/起</view>
+        <view class="bg-or f-26 lh-60 c-ff radius-50 plr-20">马上抢</view>
       </view>
     </view>
   </view>

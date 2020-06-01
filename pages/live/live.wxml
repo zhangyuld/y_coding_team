@@ -1,2 +1,51 @@
-<!--pages/live/live.wxml-->
-<text>pages/live/live.wxml</text>
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="container">
+  <!--<y_search model="1" place="输入商品名称" url="pages/search/live/live" nav="{{true}}"></y_search>-->
+  <y_swiper banner="{{banner}}" model="1" width="710" height="280" indicator="{{true}}"></y_swiper>
+  <scroll-view class="nav bg-ff" scroll-x enable-flex>
+    <view class="pr-10"></view>
+    <block wx:for="{{nav}}" wx:key="index">
+      <view class="flex-k t-c lh-100 relative onelist mlr-20 {{item.type == type?'active c-m ':''}}" data-type="{{item.type}}" bindtap="navChoose">{{item.title}}</view>
+    </block>
+    <view class="pr-10"></view>
+  </scroll-view>
+
+  <view class="list flex sizing p-30">
+    <block wx:for="{{liveList}}" wx:key="idx">
+      <view  class="item bg-ff" bindtap="goLive" data-type="{{item.type}}" data-id="{{item.id}}">
+        <view class="img_wrap">
+          <image class="logo" src="{{item.file_path}}" mode="aspectFill"></image>
+          <view class="status" wx:if="{{item.status.value==10}}">
+            <view class="bg-or">{{item.status.text}}</view>
+          </view>
+          <view class="status" wx:if="{{item.status.value==20}}">
+            <view class="bg-tip">{{item.status.text}}</view>
+          </view>
+          <view class="status" wx:if="{{item.status.value==30}}">
+            <view class="bg-red">
+              <view class="statusLine"><i></i><i></i><i></i></view>{{item.status.text}}
+            </view>
+            <span wx:if="{{item.view_num>0 || item.min_viewnum>0}}">{{item.view_num*1 + (item.min_viewnum||0)}}人观看</span>
+          </view>          
+          <view class="follow c-ff f-20 flex flex-x-c flex-dir-col" wx:if='{{item.like_num>0}}'>
+            <view class="icon_wrap flex flex-x-c radius-all mb-5 f-20 c-ff">
+              <span class='iconfontCustom iconjushoucanggift'></span>
+            </view>
+            <text>{{item.like_num_show}}</text>
+          </view>
+        </view>
+        <view class="tit f-28 onelist sizing plr-20 lh-64">{{item.name}}</view>
+        <view class="user_info flex flex-x-s">
+          <image class="radius-all mr-10" src="{{item.anchor.user.avatarUrl}}"></image>
+          <text class="flex-box onelist f-24 c-88">{{item.anchor.user.nickName}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view  class="no-content">
+    <image src="/images/empty2.png" mode="widthFix"></image>
+    <text class="cut-line">——没有找到相关的项目——</text>
+  </view>
+  <view class="more cut-line">——我是有底线的——</view>
+</view>

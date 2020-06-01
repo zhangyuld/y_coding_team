@@ -1,0 +1,9 @@
+<view class="title" wx:if="{{model == 1}}">
+  <view class="title-con">
+    <i class="before" wx:if="{{before}}"></i>
+    <view class="con">{{title}}</view>
+  </view>
+  <view class="title-more" data-url="{{url}}" bindtap="skipPage" wx:if="{{url}}">
+    更多<span class="arrow"></span>
+  </view>
+</view>

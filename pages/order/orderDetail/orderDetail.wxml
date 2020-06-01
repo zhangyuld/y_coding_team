@@ -1,0 +1,54 @@
+<import src="/template/goods/goods.wxml" />
+
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer">
+  <view class="head relative c-ff bg-m">
+    <view class="content flex flex-x-s sizing p-40">
+      <span class="iconfont icontime1 f-40 bold mr-10"></span>
+      <view class="f-32 bold">等待付款</view>
+    </view>
+    <image class="absolute bg" src="/images/order_bg"></image>
+  </view>
+
+  <view wx:if="{{!address}}" class="address flex sizing p-30 relative line-after bg-ff">
+    <span class="iconfont iconshouhuodizhi black bold f34 flex-k mr-20"></span>
+    <view class="right flex-box flex sizing">
+      <view class="right-info flex-box">
+        <view class="name black f32 bold">哈哈 15252525252</view>
+        <view class="tel gray f26">安徽省合肥市蜀山区望江路69号</view>
+      </view>
+      <span class="iconfont iconxiangyoujiantou gray f28 flex-k ml-20"></span>
+    </view>
+  </view>
+
+  <view class='goods_list sizing plr-30 bg-ff mtb-20'>
+    <view class='tit black f30 b-b lh-100'>商品列表</view>
+    
+    <template is="order_goods" ></template>
+
+    <view class='tit f-28 b-b t-r lh-80'>共2件商品,合计：<text class="c-red bold">¥398.00</text></view>
+  </view>
+
+  <view class='goods_list sizing plr-30 bg-ff mtb-20'>
+    <view class='tit black f30 b-b lh-100'>订单金额</view>
+    <view class='tit f-28 b-b t-r lh-80 flex'>
+      <view>商品金额</view>
+      <text class="c-red bold">¥398.00</text>
+    </view>
+    <view class='tit f-28 b-b t-r lh-80 flex'>
+      <view>配送金额</view>
+      <text class="c-red bold">0.00</text>
+    </view>
+    <view class='tit f-28 b-b t-r lh-80 flex'>
+      <view>实付金额</view>
+      <text class="c-red bold">¥398.00</text>
+    </view>
+  </view>
+
+  <view class="height"></view>
+  <view class="footer-fixed flex flex-x-e f-26 sizing plr-30">
+    <view class="lh-44 plr-20 radius-5 bb-a5">取消</view>
+    <view class="lh-44 plr-20 radius-5 bd-m c-m ml-20">付款</view>
+  </view>
+</view>

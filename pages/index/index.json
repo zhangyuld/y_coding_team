@@ -2,6 +2,7 @@
   "usingComponents": {
     "y_search": "/components/search/search",
     "y_swiper": "/components/swiper/swiper",
-    "y_menu": "/components/menu/menu"
+    "y_menu": "/components/menu/menu",
+    "y_title": "/components/title/title"
   }
 }

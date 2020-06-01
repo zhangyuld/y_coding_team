@@ -67,7 +67,8 @@ Page({
       spec_name,
       spec_id,
       attr_arr,
-      spec_attr_str
+      spec_attr_str,
+      pageShow: true
     })
   },
 
@@ -75,6 +76,7 @@ Page({
   skipPage(e){
     let that = this;
     let { url } = e.currentTarget.dataset;
+    METHODS.$navigationTo(url)
   },
   // 分享提示框
   shareHandle(e){

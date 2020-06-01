@@ -20,7 +20,7 @@
 .bd-m{ border: 1px solid #70BB2B!important; }
 .bd-or{ border: 1px solid #FEAB1E!important; }
 .bd-red{ border: 1px solid #E5460A!important; }
-
+.bb-a5{border: 1px solid #a5a5a5!important;}
 
 /* lulu */
 .c-m { color: #70BB2B; } 
@@ -29,7 +29,7 @@
 
 
 /* 默认样式清除 */
-page { font-family: PingFang SC Medium, Heiti, DroidSans, DroidSansFallback, "Microsoft YaHei", sans-serif,iconfont; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+page { font-family: PingFang SC Medium, Heiti, DroidSans, DroidSansFallback, "Microsoft YaHei", sans-serif,iconfont; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;background: #F4F6FA;}
 
 .appContainer {display: block;height: 100%;box-sizing: border-box;font-size: 30rpx;color: #333;}
 .appContainerHide{height: 100vh;overflow: hidden;}
@@ -86,3 +86,20 @@ radio .wx-radio-input .wx-radio-input-checked::before { color: #DCAB7E; backgrou
 .appraise_wrap .info_wrap .intro{color: #333;font-size: 30rpx;line-height: 44rpx;padding: 5rpx 0;}
 .appraise_wrap .info_wrap .img_wrap{justify-content: flex-start;flex-flow: row wrap;}
 .appraise_wrap .info_wrap .img_wrap image{display: block;width: calc(33.3% - 25rpx);margin: 14rpx 25rpx 14rpx 0;height: 160rpx;border-radius: 8rpx;}
+
+/*导航栏*/
+.nav{width: 100%;height: 100rpx;display: flex;top: 0;left: 0;z-index: 60;}
+.nav view{transition: all 0.8s;}
+.nav view::after{position: absolute;bottom: 0;left: 50%;transform: translateX(-50%);width: 0rpx;height: 3px;display: block;content: '';transition: all 0.5s;}
+.nav view.active::after{width: 100%;background: #70BB2B;}
+
+/*直播间直播时的动画*/
+.statusLine{height: 18rpx;display: flex;flex-direction: row;align-items: flex-end;margin-right: 5rpx;}
+.statusLine i{width: 2px;height: 18rpx;background: #fff;margin-right: 4rpx;animation: statusLine 1.5s ease infinite;}
+.statusLine i:nth-child(2){animation-delay: 0.3s;}
+.statusLine i:nth-child(3){animation-delay: 0.6s;}
+@keyframes statusLine{
+  0% { height: 4rpx; }
+  50% { height: 18rpx; }
+  100% { height: 4rpx; }
+}

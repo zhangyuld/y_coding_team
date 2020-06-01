@@ -1,0 +1,7 @@
+.title{height: 100rpx;width: 100%;display: flex;flex-direction: row;align-items: center;justify-content: space-between;position: relative;box-sizing: border-box;padding: 0 40rpx 0 0;}
+.title .title-con{font-size: 32rpx;font-weight: bold;display: flex;flex-direction: row;align-items: center;}
+.title .title-con .before{display: block;width: 15rpx;height: 30rpx;background: #70BB2B;}
+.title .title-con .con{margin-left: 30rpx;}
+
+.title .title-more{font-size: 28rpx;color: #FEAB1E;}
+.title .title-more .arrow{display: inline-block;width: 16rpx;height: 16rpx;border-top: 2px solid #FEAB1E;border-right: 2px solid #FEAB1E;transform: rotate(45deg);}

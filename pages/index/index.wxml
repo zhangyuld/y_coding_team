@@ -90,43 +90,33 @@
 
 	<!-- 商学院 -->
 	<view>
-		<view class="title_c flex sizing pr-20">
-			<view class="con flex">商学院</view>
-			<navigator class="info flex" hover-class="none">
-				更多
-				<image src="/images/arrow_right.png"></image>
-			</navigator>
-		</view>
-		<scroll-view class="business y_flex" scroll-x enable-flex>
-			<view class="item">
+		<y_title title="商学院" before="{{true}}" url="pages/index/index"></y_title>
+		<scroll-view class="business" scroll-x enable-flex>
+			<view class="mr-10"></view>
+			<view class="item flex-k mr-30 relative radius-20">
 				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
-				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+				<view class="onelist c-ff f-24 sizing plr-20">手把手教你做直播手把手教你做直播</view>
 			</view>
-			<view class="item">
+			<view class="item flex-k mr-30 relative radius-20">
 				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
-				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+				<view class="onelist c-ff f-24 sizing plr-20">手把手教你做直播手把手教你做直播</view>
 			</view>
-			<view class="item">
+			<view class="item flex-k mr-30 relative radius-20">
 				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
-				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+				<view class="onelist c-ff f-24 sizing plr-20">手把手教你做直播手把手教你做直播</view>
 			</view>
-			<view class="item">
+			<view class="item flex-k mr-30 relative radius-20">
 				<image src="https://i.loli.net/2020/05/25/lLIxyTAZO6vsFur.png"></image>
-				<view class="y_elli">手把手教你做直播手把手教你做直播</view>
+				<view class="onelist c-ff f-24 sizing plr-20">手把手教你做直播手把手教你做直播</view>
 			</view>
+			<view class="mr-10"></view>
 		</scroll-view>
 	</view>
 
 	<!-- 商品部分 -->
 	<view>
-		<view class="title_c flex sizing pr-20">
-			<view class="con flex">助农商品</view>
-			<navigator class="info flex" hover-class="none">
-				更多
-				<image src="/images/arrow_right.png"></image>
-			</navigator>
-		</view>
-		<view class="list-container">
+		<y_title title="助农商品" before="{{true}}" url="pages/index/index"></y_title>
+		<view class="list-container sizing plr-20">
 			<template is="goods" data="" />
 		</view>
 		<view  class="no-content">

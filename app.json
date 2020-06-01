@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/goods/goods",
+    "pages/store/store",
     "pages/category/category",
     "pages/live/live",
     "pages/cart/cart",
@@ -14,6 +15,10 @@
     "pages/address/address/address",
     "pages/address/addressAdd/addressAdd",
     "pages/account/authorize/authorize",
+    "pages/mine/setting/setting",
+    "pages/order/order/order",
+    "pages/order/orderDetail/orderDetail",
+    "pages/order/refund/refund",
     "pages/demo/demo"
   ],
   "window": {

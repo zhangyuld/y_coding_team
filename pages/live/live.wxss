@@ -1,1 +1,11 @@
-/* pages/live/live.wxss */
+
+.list .item{width: 340rpx;}
+.list .item .img_wrap{height: 255rpx;position: relative;overflow: hidden;border-radius: 10rpx 10rpx 0 0;}
+.list .item .img_wrap .logo{display: block;border-radius: inherit;}
+.list .item .img_wrap .status{position: absolute;left: 18rpx;top: 20rpx;line-height: 40rpx;background-color: rgba(0,0,0,.5);border-radius: 5rpx;padding: 0;text-align: right;color: #fff;display: flex;align-items: center;font-size: 20rpx;} 
+.list .item .img_wrap .status>view{padding: 0 12rpx;border-radius: 5rpx;color: #fff;line-height: 40rpx;display: inline-block;display: flex;align-items: center;}
+.list .item .img_wrap .status > span{padding: 0 20rpx 0 10rpx;}
+.list .item .img_wrap .follow{position: absolute;right: 20rpx;bottom: 10rpx;}
+.list .item .img_wrap .follow .icon_wrap{width: 30rpx;height: 30rpx;background-color: #D60D08;}
+.list .item .user_info{box-sizing: border-box;padding: 0 20rpx 25rpx;}
+.list .item .user_info image{display: block;width: 40rpx;height: 40rpx;}

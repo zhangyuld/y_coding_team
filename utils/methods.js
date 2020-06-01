@@ -24,7 +24,7 @@ let $saveImageToPhotosAlbum = $promisify(wx.saveImageToPhotosAlbum);
 let $requestApi =  $promisify(wx.request);
 
 
-let $host = 'https://ssp.vshop365.cn/api/'
+let $host = 'https://njlb.vshop365.cn/index.php?s=/api/'
 
 let $tabBarLinks = [
   'pages/index/index',
@@ -42,6 +42,8 @@ let $singleClick = function(fn,params,timeout=500){
     }else{
       that[fn](params)
     }
+  }else{
+    return false;
   }
   throttle = false
   setTimeout(() => {
