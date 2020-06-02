@@ -1,0 +1,19 @@
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer sizing p-30">
+  <block wx:for='{{list}}' wx:key="index">
+    <view class="list mb-30" hover-class="none" data-url='pages/news/newsDetail/newsDetail?id={{item.id}}' bindtap='skipPage'>
+      <image class="listImg radius-10 mb-10" src="{{item.image.file_path}}"></image>
+      <view class="listTitle f-30 twolist mb-10">{{item.title}}</view>
+      <view class="listInfo flex f-26 c-a5">
+        <view >{{item.create_time}}</view>
+        <view>{{item.views}}浏览</view>
+      </view>
+    </view>
+  </block>
+  <view  class="no-content">
+    <image src="/images/empty2.png" mode="widthFix"></image>
+    <text class="cut-line">——没有找到相关的项目——</text>
+  </view>
+  <view class="more cut-line">——我是有底线的——</view>
+</view>

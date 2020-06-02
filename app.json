@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/news/news/news",
+    "pages/news/newsDetail/newsDetail",
     "pages/goods/goods",
     "pages/store/store",
     "pages/category/category",
@@ -24,7 +26,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F4F6FA",
-    "navigationBarTitleText": "农家乐播",
+    "navigationBarTitleText": "农佳乐播",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

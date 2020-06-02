@@ -6,16 +6,16 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
-		"enhance": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
 		"autoAudits": false,
+		"coverView": true,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"enhance": true,
+		"nodeModules": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -24,13 +24,13 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.3",
 	"appid": "wx01eac783ddfbb914",
-	"projectname": "%E5%86%9C%E5%AE%B6%E4%B9%90%E6%92%AD",
+	"projectname": "%E5%95%86%E5%9F%8E%E6%A8%A1%E6%9D%BF--%E9%9D%99%E6%80%81--github",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -61,6 +61,20 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
+				{
+					"id": -1,
+					"name": "新闻列表",
+					"pathName": "pages/news/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "新闻详情",
+					"pathName": "pages/news/newsDetail/newsDetail",
+					"query": "id=10001",
+					"scene": null
+				},
 				{
 					"id": -1,
 					"name": "搜索中转",
