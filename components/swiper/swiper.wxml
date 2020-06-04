@@ -2,7 +2,7 @@
 <swiper class="swiper" autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color="{{indicator_active}}" circular='true' style="width: {{width}}rpx;height: {{height}}rpx" wx:if="{{model == 1}}">
   <block wx:for="{{banner}}" wx:key="index">
     <swiper-item>
-      <image class="banner" src="{{item.url}}"></image>
+      <image class="banner" src="{{item.image.file_path}}"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -10,7 +10,7 @@
 <swiper class="swiper custom-dot"  autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color="{{indicator_active}}" circular='true' style="width: {{width}}rpx;height: {{height}}rpx" wx:if="{{model == 2}}">
   <block wx:for="{{banner}}" wx:key="index">
     <swiper-item>
-      <image class="banner" src="{{item.url}}"></image>
+      <image class="banner" src="{{item.image.file_path}}"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -18,7 +18,7 @@
 <swiper class="swiper custom-dot2"  autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color="{{indicator_active}}" circular='true' style="width: {{width}}rpx;height: {{height}}rpx" wx:if="{{model == 3}}">
   <block wx:for="{{banner}}" wx:key="index">
     <swiper-item>
-      <image class="banner" src="{{item.url}}"></image>
+      <image class="banner" src="{{item.image.file_path}}"></image>
     </swiper-item>
   </block>
 </swiper>
@@ -27,7 +27,7 @@
   <swiper class="swiper custom-dot3"  autoplay="{{auto}}" circular='true' bindchange='swiperChange' style="width: {{width}}rpx;height: {{height}}rpx">
     <block wx:for="{{banner}}" wx:key="index">
       <swiper-item>
-        <image class="banner" src="{{item.url}}"></image>
+        <image class="banner" src="{{item.image.file_path}}"></image>
       </swiper-item>
     </block>
   </swiper>
@@ -37,7 +37,7 @@
 <swiper class="swiper-margin"  autoplay="{{auto}}" indicator-dots='{{indicator}}' indicator-color='{{indicator_default}}' indicator-active-color='{{indicator_active}}' circular='true' previous-margin='30px' next-margin='30px' bindchange='swiperChange2' style="height: {{height}}rpx" wx:if="{{model == 5}}">
   <block wx:for="{{banner}}" wx:key="index">
     <swiper-item class="item {{current2 == index ? 'active':'aaa'}}">
-      <image class="banner" src="{{item.url}}"></image>
+      <image class="banner" src="{{item.image.file_path}}"></image>
     </swiper-item>
   </block>
 </swiper>

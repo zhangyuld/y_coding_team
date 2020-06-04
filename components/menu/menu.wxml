@@ -1,6 +1,6 @@
 <view class="menu">
 	<view class="item" data-path="{{item.url}}" bindtap="toPath" wx:for="{{list}}" wx:key="index" style="width: {{100 / itemRatio}}%">
-		<image class="logo" src="{{item.image}}"></image>
-		<text class="title">{{item.title}}</text>
+		<image class="logo" src="{{item.image.file_path}}"></image>
+		<text class="title">{{item.name}}</text>
 	</view>	
 </view>

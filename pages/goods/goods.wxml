@@ -40,9 +40,11 @@
 	<view class="live flex bg-ff sizing p-30 mb-20">
 		<view class="flex flex-box">
 			<image class="logo radius-50 mr-20 flex-k" src="/images/menu1.png"></image>
-			<view class="flex-dir-col flex-y-s flex-box">
-				<view class="onelist f-30">直播间名称直播间名称直播间名称直播间名称直播间名称直播间名称</view>
-				<view class="tips c-m bd-m f-22 mt-10">直播中</view>
+			<view class="flex-box">
+				<view class="onelist f-30 flex-box">直播间名称直播间名称直播间名称直播间名称直播间名称直播间名称</view>				
+				<view class="flex flex-x-s">
+					<view class="tips c-m bd-m f-22 mt-10">直播中</view>
+				</view>
 			</view>
 		</view>
 		<view class="flex flex-k f-28 c-m ml-30">前往直播间<text class="iconfont iconarrow-right"></text></view>

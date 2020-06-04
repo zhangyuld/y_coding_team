@@ -36,6 +36,10 @@ Component({
     nav: {
       type: Boolean,
       value: false
+    },
+    input: {
+      type: Boolean,
+      value: false
     }
   },
   /**
@@ -76,6 +80,7 @@ Component({
       that.setData({
         searchKey: e.detail.value,
       })
+      that.data.input && that.triggerEvent('searchInput',e.detail.value);
     },
     cancel(e){
       let that = this;
@@ -92,7 +97,7 @@ Component({
         })
       }else{
         let { searchKey } = that.data;
-        this.triggerEvent('searchConfirm',searchKey);
+        that.triggerEvent('searchConfirm',searchKey);
       }
     }
   }
