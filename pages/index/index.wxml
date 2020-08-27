@@ -10,7 +10,7 @@
 		</view>
 	</y_search>
   <y_swiper banner="{{banner}}" model="1" width="710" height="280" indicator="{{true}}"></y_swiper>
-  <y_menu list="{{menu}}" row="4"></y_menu>
+  <y_menu list="{{menu}}"></y_menu>
 	<!-- 电商扶贫图 -->
 	<navigator hover-class="none" url="">
 		<image src="/images/help.png" mode="widthFix"></image>

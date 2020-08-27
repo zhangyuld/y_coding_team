@@ -24,8 +24,8 @@
 <view class="attention_wrap fadeIn" wx:if='{{posterShow}}'>
   <view class="bg" data-type="close" catchtap="shareHandle"></view>
   <view class="info_wrap">
-    <span class='iconfontCustom iconcuowu light-gray f30' data-type="close" catchtap="shareHandle"></span>
+    <span class='iconfontCustom iconcuowu' data-type="close" catchtap="shareHandle"></span>
     <image class="code" src="{{qrcode}}" show-menu-by-longpress="{{true}}" mode="widthFix"></image>
-    <view class="save f28 t-c m-top20">长按图片保存</view>
+    <view class="save">长按图片保存</view>
   </view>
 </view>

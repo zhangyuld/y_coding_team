@@ -69,27 +69,6 @@
 					"scene": null
 				},
 				{
-					"id": 1,
-					"name": "新闻详情",
-					"pathName": "pages/news/newsDetail/newsDetail",
-					"query": "id=10001",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "搜索中转",
-					"pathName": "pages/search/goods_his/goods_his",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "商品搜索",
-					"pathName": "pages/search/goods/goods",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": -1,
 					"name": "商品详情",
 					"pathName": "pages/goods/goods",
@@ -100,27 +79,6 @@
 					"id": -1,
 					"name": "确认订单",
 					"pathName": "pages/order/orderSure/orderSure",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "店铺详情",
-					"pathName": "pages/store/store",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "商品分类",
-					"pathName": "pages/category/category",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "直播列表",
-					"pathName": "pages/live/live",
 					"query": "",
 					"scene": null
 				},
@@ -139,20 +97,6 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "个人中心",
-					"pathName": "pages/mine/mine",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "账号设置",
-					"pathName": "pages/mine/setting/setting",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 9,
 					"name": "订单中心",
 					"pathName": "pages/order/order/order",
@@ -164,6 +108,19 @@
 					"name": "订单详情",
 					"pathName": "pages/order/orderDetail/orderDetail",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址列表",
+					"pathName": "pages/address/address/address",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址添加",
+					"pathName": "pages/address/addressAdd/addressAdd",
 					"scene": null
 				}
 			]

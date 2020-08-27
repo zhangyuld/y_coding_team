@@ -67,7 +67,7 @@
 				<view class='left flex-box flex'>
 					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
 				</view>
-				<view class='num f-26 gray'>x1</view>
+				<view class='num f-26 c-a8'>x1</view>
 			</view>
 		</view>
 	</view>
@@ -82,7 +82,7 @@
 				<view class='left flex-box flex'>
 					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
 				</view>
-				<view class='num f-26 gray'>x1</view>
+				<view class='num f-26 c-a8'>x1</view>
 			</view>
 		</view>
 	</view>
@@ -99,7 +99,7 @@
 			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
 			<view class='info flex'>
 				<view class='left flex-box flex'>
-					<view class='price black bold f-26 c-red'>￥<text class='f-32'>{9.99</text><text class='num f-26 gray'> x10</text></view>
+					<view class='price black bold f-26 c-red'>￥<text class='f-32'>9.99</text><text class='num f-26 c-a8'> x10</text></view>
 				</view>
 				<view class="plr-20 bg-m c-ff f-26 t-c lh-44 radius-5" wx:if="{{refund}}">已申请售后</view>
 				<view class="plr-20 bg-m c-ff f-26 t-c lh-44 radius-5" data-id="{{order_goods_id}}" catchtap="onApplyRefund" wx:elif="{{order.isAllowRefund}}">申请售后</view>
@@ -127,28 +127,28 @@
 </template>
 
 <!-- 支付方式弹窗 -->
-<template name="pay_type">
-	<view class="pay_popup relative" wx:if="{{pay_type_status}}">
+<template name="pay_type" wx:if="{{pay_type_status}}">
+	<view class="pay_popup relative">
 		<view class="bg fixed" bindtap="payOrderPopupHandle"></view>
 		<view class="content fixed animated slideInUp faster">
-			<view class="tit f36 sub-gray relative t-c bg-ff">确认支付<span class='iconfont iconcuowu absolute f28 gray' bindtap="payOrderPopupHandle"></span></view>
+			<view class="tit f-36 relative t-c bg-ff">确认支付<span class='iconfont iconcuowu absolute f-28 c-a8' bindtap="payOrderPopupHandle"></span></view>
 			<view class="type sizing">
 				<view class="item flex" data-value='10' bindtap="payTypeHandle">
-					<view class="left flex"><span class='iconfont iconqian f46 c-m mr-5'></span></view>
-					<view class="mid f30 sub-gray flex-box">余额</view>
-					<view class="right f30 c-m flex">
-						<view class="icon_wrap flex radius-50 flex sizing {{curPayType == '10' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{curPayType == '10'}}" class='iconfont iconzhengque c-ff f24 bold'></span></view>
+					<view class="left flex"><span class='iconfont iconqian f-46 c-m mr-5'></span></view>
+					<view class="mid f-30 flex-box">余额</view>
+					<view class="right f-30 c-m flex">
+						<view class="icon_wrap flex radius-50 flex sizing {{curPayType == '10' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{curPayType == '10'}}" class='iconfont iconzhengque c-ff f-24 bold'></span></view>
 					</view>
 				</view>
 				<view class="item flex" data-value='20' bindtap="payTypeHandle">
-					<view class="left flex"><span class='iconfont iconweixincopy f40 c-m mr-5'></span></view>
-					<view class="mid f30 sub-gray flex-box">微信支付</view>
-					<view class="right f30 c-m flex">
-						<view class="icon_wrap flex radius-50 flex sizing {{curPayType == '20' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{curPayType == '20'}}" class='iconfont iconzhengque c-ff f24 bold'></span></view>
+					<view class="left flex"><span class='iconfont iconweixincopy f-40 c-m mr-5'></span></view>
+					<view class="mid f-30 flex-box">微信支付</view>
+					<view class="right f-30 c-m flex">
+						<view class="icon_wrap flex radius-50 flex sizing {{curPayType == '20' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{curPayType == '20'}}" class='iconfont iconzhengque c-ff f-24 bold'></span></view>
 					</view>
 				</view>
 			</view>
-			<view class="to_pay_btn bg-m c-ff radius-10 f32 t-c" bindtap="onSubmitOrder">立即支付</view>
+			<view class="to_pay_btn bg-m c-ff radius-10 f-32 t-c" bindtap="onSubmitOrder">立即支付</view>
 		</view>
 	</view>
 </template>
@@ -157,104 +157,34 @@
 <!--评论-->
 <template name="comment">
 	<view class="item b-b sizing flex sizing p-30">
-				<image class="logo radius-50" src="/images/menu1.png"></image>
-				<view class="info_wrap flex-box">
-					<view class="row flex mb-10">
-						<view class="left flex-box">
-							<view class="f-30 onelist mb-10">姓名姓名长度</view>
-							<view class="f-22 gray">2019-10-28 13:17:36</view>
-						</view>
-						<view class="right flex ml-30">
-							<view class="star flex-box flex">
-								<span class="iconfont f-28  {{goods.score >= item ? 'c-m iconstar':'c-a5 iconwujiaoxing2'}}" wx:for="{{[1,2,3,4,5]}}" wx:key="index"></span>
-							</view>
-						</view>
-					</view>
-					<view class="intro">效果不错，漂亮</view>
-					<view class="img_wrap flex">
-						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
-						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
-						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
-						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
-						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+		<image class="logo radius-50" src="/images/menu1.png"></image>
+		<view class="info_wrap flex-box">
+			<view class="row flex mb-10">
+				<view class="left flex-box">
+					<view class="f-30 onelist mb-10">姓名姓名长度</view>
+					<view class="f-22 c-a8">2019-10-28 13:17:36</view>
+				</view>
+				<view class="right flex ml-30">
+					<view class="star flex-box flex">
+						<span class="iconfont f-28  {{goods.score >= item ? 'c-m iconstar':'c-a5 iconwujiaoxing2'}}" wx:for="{{[1,2,3,4,5]}}" wx:key="index"></span>
 					</view>
 				</view>
 			</view>
-</template>
-
-
-<template name="bargain_copy">
-	<view class="goods-item flex bg-ff sizing p-20 mb-20 radius-10" data-url="{{order ? 'pages/bargain/bargainTask/bargainTask?task_id='+task_id : 'pages/bargain/bargainGoods/bargainGoods?active_id='+active_id}}" bindtap="skipPage">
-		<!-- 商品图片 -->
-		<view class="logo box-220 mr-30 radius-10">
-			<image src="{{ goods.goods_image }}"></image>
-		</view>
-		<view class="goods-detail flex-box flex-dir-col flex-x-b sizing ptb-15">
-			<!-- 商品名称 -->
-			<view class="twolist f-28" style="min-height: 60rpx">{{ goods.goods_name }}</view>
-			<block wx:if="{{order}}">
-				<!-- 砍价进度 -->
-				<view class="task-rate f-26 c-a8 mt-15">
-					<block wx:if="{{ status }}">
-						<text>已砍</text>
-						<text class="c-red">{{ cut_money }}</text>
-						<text>元，</text>
-						<text>只差</text>
-						<text class="c-red">{{ surplus_money }}</text> 
-						<text>元</text>
-					</block>
-					<block wx:if="{{ is_floor }}">
-						<text>已砍至最低</text>
-						<text class="col-m">{{ floor_price }}</text>
-						<text>元</text>
-					</block>
-				</view>
-				<!-- 任务状态 -->
-				<view class="task-status mt-30">
-					<!-- 倒计时 -->
-					<view wx:if="{{ status }}" class="count-down flex flex-x-s f-26">
-						<view class="clock-text mr-10"> <text>剩余</text> </view>
-						<view class="clock flex monospace">
-							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.day }}</text> </view>
-							<view class="plr-8"> <text>:</text> </view>
-							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.hou }}</text> </view>
-							<view class="plr-8"> <text>:</text> </view>
-							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.min }}</text> </view>
-							<view class="plr-8"> <text>:</text> </view>
-							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.sec }}</text> </view>
-						</view>
-					</view>
-					<view wx:if="{{ !status }}" class="mt-30 f-26 lh-50">
-						<text class="c-red">{{ is_buy ? '砍价成功' : '已结束' }}</text>
-					</view>
-				</view>
-			</block>
-			<block wx:else>
-				<!-- 参与的用户头像 -->
-				<view wx:if="{{ helps_count > 0 }}" class="flex flex-x-s">
-					<view class="user-list flex mr-10">
-						<view wx:for="{{ helps }}" wx:for-item="help" wx:for-index="idx" wx:key="this" class="user-item-avatar">
-							<image class="radius-all" src="{{ help.user.avatarUrl }}" style="width: 36rpx;height:36rpx;margin-left: {{idx == 0 ? '0' : '-8rpx'}};"></image>
-						</view>
-					</view>
-					<view class="f-24 f-88"> <text>{{ helps_count }}人正在砍价</text> </view>
-				</view>
-				<view class="flex flex-y-e mt-10">
-					<view>
-						<!-- 商品原价 -->
-						<view class="line-t f-26 c-a8">￥{{ goods.goods_sku.goods_price }}</view>
-						<!-- 砍价低价 -->
-						<view class="c-red f-26">最低￥<text class="f-32">{{ floor_price }}</text></view>
-					</view>
-					<view class="bg-m lh-50 plr-20 radius-10 c-ff f-28">立即参加</view>
-				</view>
-			</block>
+			<view class="intro">效果不错，漂亮</view>
+			<view class="img_wrap flex">
+				<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+				<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+			</view>
 		</view>
 	</view>
 </template>
 
+
 <!--砍价-->
-<template name="bargain_copy">
+<template name="bargain">
 	<view class="goods-item flex bg-ff sizing p-20 mb-20 radius-10" data-url="{{order ? 'pages/bargain/bargainTask/bargainTask?task_id='+task_id : 'pages/bargain/bargainGoods/bargainGoods?active_id='+active_id}}" bindtap="skipPage">
 		<!-- 商品图片 -->
 		<view class="logo box-220 mr-30 radius-10">
@@ -271,7 +201,7 @@
 						<text class="c-red">112</text>
 						<text>元，</text>
 						<text>只差</text>
-						<text class="c-red">2</text> 
+						<text class="c-red">2</text>
 						<text>元</text>
 					</block>
 					<block wx:if="{{ is_floor }}">
@@ -367,7 +297,7 @@
 		<view class="goods-detail flex-box flex-dir-col flex-x-b sizing ptb-15">
 			<!-- 商品名称 -->
 			<view class="twolist f-28" style="min-height: 60rpx">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
-			
+
 			<view class="flex flex-x-s f-24 c-red">
 				<text class="iconfont iconkehu mr-5"></text>
 				<text>3人团</text>

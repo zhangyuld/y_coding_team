@@ -36,7 +36,6 @@ let $wxapp_id = "10001"
 let $tabBarLinks = [
   'pages/index/index',
   "pages/category/category",
-  'pages/live/live',
   'pages/cart/cart',
   'pages/mine/mine'
 ]
@@ -652,7 +651,7 @@ export default {
   $makeRequest,               // 根据get/post传入不同开始请求
   $confirmLogin,              // 判断登陆
   $navigationTo,              // 导航跳转,可判断tabbar跳转
-  $getShareUrlParams,         // 获取风向参数
+  $getShareUrlParams,         // 获取分享参数
   $makePhone,                 // 拨打电话
   $uploadImage,               // 简单的单张图上传
   $uploadMoreImage,           // 多张图的上传,暂不使用,后续优化

@@ -3,46 +3,46 @@
 <loaded pageShow="{{pageShow}}"></loaded>
 
 <view wx:if="{{!address}}" class="address flex sizing p-30 relative line-after bg-ff" data-url='pages/address/address/address' bindtap="skipPage">
-	<span class="iconfont iconshouhuodizhi black bold f34 flex-k mr-20"></span>
+	<span class="iconfont iconshouhuodizhi black bold f-34 flex-k mr-20"></span>
 	<view class="right flex-box flex sizing">
 		<view class="right-info flex-box">
-			<view class="name black f32 bold">哈哈 15252525252</view>
-			<view class="tel gray f26">安徽省合肥市蜀山区望江路69号</view>
+			<view class="name black f-32 bold">哈哈 15252525252</view>
+			<view class="tel c-a8 f-26">安徽省合肥市蜀山区望江路69号</view>
 		</view>
-		<span class="iconfont iconxiangyoujiantou gray f28 flex-k ml-20"></span>
+		<span class="iconfont iconxiangyoujiantou c-a8 f-28 flex-k ml-20"></span>
 	</view>
 </view>
 <view wx:else class="address flex sizing p-30 relative line-after bg-ff" data-url='pages/address/address/address' bindtap="skipPage">
-	<span class="iconfont iconshouhuodizhi black bold f34 flex-k mr-20"></span>
+	<span class="iconfont iconshouhuodizhi black bold f-34 flex-k mr-20"></span>
 	<view class="right flex-box flex sizing">
 		<view class="right-info flex-box">
-			<view class="name black f32">请选择地址</view>
+			<view class="name black f-32">请选择地址</view>
 		</view>
-		<span class="iconfont iconxiangyoujiantou gray f28 flex-k ml-20"></span>
+		<span class="iconfont iconxiangyoujiantou c-a8 f-28 flex-k ml-20"></span>
 	</view>
 </view>
 
 <view class='goods_list sizing plr-30 bg-ff mtb-20'>
-	<view class='tit black f30 b-b lh-100'>商品列表</view>
+	<view class='tit black f-30 b-b lh-100'>商品列表</view>
 	
 	<template is="order_goods" ></template>
 
-  <view class='tit f30 b-b t-r lh-80'>共2件商品,合计：<text class="c-red bold">¥398.00</text></view>
+  <view class='tit f-30 b-b t-r lh-80'>共2件商品,合计：<text class="c-red bold">¥398.00</text></view>
 </view>
 
-<view class="discount bg-ff f28 col-3">
+<view class="discount bg-ff f-28 col-3">
 	<!-- 会员卡 -->
 	<view class="item b-b sizing">
 		<view class="row flex">
-			<text class="tips bg-ff bg-m f23 sizing t-c">卡</text>
+			<text class="tips c-ff bg-m f-24 sizing t-c">卡</text>
 			<view class="info flex-box">9.5折会员卡</view>
-			<view class="right c-red">-<text class="rmb f20">￥</text>1.00</view>
+			<view class="right c-red">-<text class="f-20">￥</text>1.00</view>
 		</view>
 	</view>
 	<!-- 积分 -->
 	<view class="item b-b sizing">
 		<view class="row flex">
-			<text class="tips bg-ff bg-m f23 sizing t-c">分</text>
+			<text class="tips c-ff bg-m f-24 sizing t-c">分</text>
 			<view class="info flex-box">使用积分</view>
 			<view class="right">
 				<switch bindchange="integralChange" color="#70BB2B"/>
@@ -50,42 +50,42 @@
 		</view>
 		<view class="discount_tips flex sizing" wx:if="{{integral_status}}">
 			<view class="info flex-box">消耗100积分</view>
-			<view class="right c-red">-<text class="rmb f20">￥</text>1.00</view>
+			<view class="right c-red">-<text class="f-20">￥</text>1.00</view>
 		</view>
 	</view>
 	<!-- 优惠券 -->
 	<view class="item b-b sizing">
 		<view class="row flex" bindtap="couponHandle">
-			<text class="tips bg-ff bg-m f23 sizing t-c">券</text>
+			<text class="tips c-ff bg-m f-24 sizing t-c">券</text>
 			<view class="info flex-box">优惠券</view>
 			<view wx:if="{{coupon_id}}" class="right c-red">
-				-<text class="rmb f20">￥</text>1.00
-				<span class="iconfont iconxiangyoujiantou f24"></span>
+				-<text class="f-20">￥</text>1.00
+				<span class="iconfont iconxiangyoujiantou f-24"></span>
 			</view>
 			<view wx:else class="right">
-				<text class="coupon f24 sizing bg-ff bg-m">4张可用</text>
-				<span class="iconfont iconxiangyoujiantou f24"></span>
+				<text class="coupon f-24 sizing c-ff bg-m">4张可用</text>
+				<span class="iconfont iconxiangyoujiantou f-24"></span>
 			</view>
 		</view>
 	</view>
 	<view class="item b-b sizing">
 		<view class="row flex">
 			<view class="info flex-box">运费</view>
-			<view class="right c-red"><text class="rmb f20">￥</text>2.00</view>
+			<view class="right c-red"><text class="f-20">￥</text>2.00</view>
 		</view>
 	</view>
 	<view class="item b-b sizing">
 		<view class="row flex">
 			<view class="info flex-box">实际付款</view>
-			<view class="right c-red"><text class="rmb f20">￥</text>16.00</view>
+			<view class="right c-red"><text class="f-20">￥</text>16.00</view>
 		</view>
 	</view>
 </view>
 
 <view class="height"></view>
-<view class="to_pay fixed flex"> 
-  <view class="flex-box f32 sizing plr-30">实际款：<text class="bold c-red">￥16.00</text></view>
-  <view class="bg-ff bg-m f30 t-c sizing plr-50" bindtap="payOrderPopupHandle">立即支付</view>
+<view class="to_pay fixed flex bg-ff"> 
+  <view class="flex-box f-32 sizing plr-30">实际款：<text class="bold c-red">￥16.00</text></view>
+  <view class="c-ff bg-m f-30 t-c sizing plr-50" bindtap="payOrderPopupHandle">立即支付</view>
 </view>
 
 
@@ -93,50 +93,50 @@
 <view class="coupon_popup">
 	<view class="bg fixed" bindtap="couponHandle" wx:if="{{coupon_status}}"></view>
 	<view class="info fixed sizing bg-ff" style="transform: {{coupon_status ? 'translateY(0)':'translateY(50vh)'}}">
-		<view class="no_used c-red b-b radius f32 t-c" data-index="" bindtap="selectCouponHandle">不使用优惠券</view>
+		<view class="no_used c-red b-b radius f-32 t-c" data-index="" bindtap="selectCouponHandle">不使用优惠券</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="1" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
-				<view class="price c-red f44"><text class="rmb f28">￥</text>5.00</view>
-				<view class="tips f28 gray">满10.00元可用</view>
+				<view class="price c-red f-44"><text class="f-28">￥</text>5.00</view>
+				<view class="tips f-28 c-a8">满10.00元可用</view>
 			</view>
 			<view class="right flex-box sizing">
-				<view class="name black f32">5元代金券</view>
-				<view class="time f26 gray">2019-09-04~2019-11-04</view>
+				<view class="name black f-32">5元代金券</view>
+				<view class="time f-26 c-a8">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 1 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 1 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f-32 c-ff'></span></view>
 		</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="2" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
-				<view class="price c-red f44"><text class="rmb f28">￥</text>8.00</view>
-				<view class="tips f28 gray">满15.00元可用</view>
+				<view class="price c-red f-44"><text class="f-28">￥</text>8.00</view>
+				<view class="tips f-28 c-a8">满15.00元可用</view>
 			</view>
 			<view class="right flex-box sizing">
-				<view class="name black f32">8元代金券</view>
-				<view class="time f26 gray">2019-09-04~2019-11-04</view>
+				<view class="name black f-32">8元代金券</view>
+				<view class="time f-26 c-a8">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 2 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 2 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f-32 c-ff'></span></view>
 		</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="3" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
-				<view class="price c-red f44"><text class="rmb f28">￥</text>10.00</view>
-				<view class="tips f28 gray">满20.00元可用</view>
+				<view class="price c-red f-44"><text class="f-28">￥</text>10.00</view>
+				<view class="tips f-28 c-a8">满20.00元可用</view>
 			</view>
 			<view class="right flex-box sizing">
-				<view class="name black f32">10元代金券</view>
-				<view class="time f26 gray">2019-09-04~2019-11-04</view>
+				<view class="name black f-32">10元代金券</view>
+				<view class="time f-26 c-a8">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 3 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 3 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f-32 c-ff'></span></view>
 		</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="4" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
-				<view class="price c-red f44"><text class="rmb f28">￥</text>15.00</view>
-				<view class="tips f28 gray">满25.00元可用</view>
+				<view class="price c-red f-44"><text class="f-28">￥</text>15.00</view>
+				<view class="tips f-28 c-a8">满25.00元可用</view>
 			</view>
 			<view class="right flex-box sizing">
-				<view class="name black f32">15元代金券</view>
-				<view class="time f26 gray">2019-09-04~2019-11-04</view>
+				<view class="name black f-32">15元代金券</view>
+				<view class="time f-26 c-a8">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 4 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 4 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f-32 c-ff'></span></view>
 		</view>
 	</view>
 </view>
@@ -145,24 +145,24 @@
 <view class="pay_popup">
 	<view class="bg fixed" wx:if="{{pay_type_status}}" bindtap="payOrderPopupHandle"></view>
 	<view class="content fixed" style="transform: {{pay_type_status ? 'translateY(0)':'translateY(50vh)'}}">
-		<view class="tit f36 sub-gray relative t-c bg-ff">确认支付<span class='iconfont iconcuowu absolute f28 gray' bindtap="payOrderPopupHandle"></span></view>
+		<view class="tit f-36 relative t-c bg-ff">确认支付<span class='iconfont iconcuowu absolute f-28 c-a8' bindtap="payOrderPopupHandle"></span></view>
 		<view class="type sizing">
 			<view class="item flex" data-type='balancePay' bindtap="payTypeHandle">
-				<view class="left flex"><span class='iconfont iconqian f46 c-m'></span></view>
-				<view class="mid f30 sub-gray flex-box">余额<text class="f26">（账户余额￥8040.00）</text></view>
-				<view class="right f30 c-m flex">
+				<view class="left flex"><span class='iconfont iconqian f-46 c-m'></span></view>
+				<view class="mid f-30 flex-box">余额<text class="f-26">（账户余额￥8040.00）</text></view>
+				<view class="right f-30 c-m flex">
 					<text class="price">-￥17</text>
-					<view class="icon_wrap flex radius-50 flex sizing {{type == 'balancePay' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'balancePay'}}" class='iconfont iconzhengque bg-ff f24'></span></view>
+					<view class="icon_wrap flex radius-50 flex sizing {{type == 'balancePay' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'balancePay'}}" class='iconfont iconzhengque c-ff f-24'></span></view>
 				</view>
 			</view>
 			<view class="item flex" data-type='wxPay' bindtap="payTypeHandle">
-				<view class="left flex"><span class='iconfont iconweixincopy f40'></span></view>
-				<view class="mid f30 sub-gray flex-box">微信支付</view>
-				<view class="right f30 c-m flex">
-					<view class="icon_wrap flex radius-50 flex sizing {{type == 'wxPay' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'wxPay'}}" class='iconfont iconzhengque bg-ff f24'></span></view>
+				<view class="left flex"><span class='iconfont iconweixincopy f-40'></span></view>
+				<view class="mid f-30 flex-box">微信支付</view>
+				<view class="right f-30 c-m flex">
+					<view class="icon_wrap flex radius-50 flex sizing {{type == 'wxPay' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'wxPay'}}" class='iconfont iconzhengque c-ff f-24'></span></view>
 				</view>
 			</view>
 		</view>
-		<view class="to_pay_btn bg-m bg-ff radius-10 f32 t-c" bindtap="payOrderHandle">立即支付</view>
+		<view class="to_pay_btn bg-m c-ff radius-10 f-32 t-c" bindtap="payOrderHandle">立即支付</view>
 	</view>
 </view>

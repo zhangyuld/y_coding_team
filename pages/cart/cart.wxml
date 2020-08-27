@@ -6,7 +6,7 @@
       <view class='order bg-ff mb-10' data-id='{{item.id}}'>
         <view class='orderHead flex flex-x-s sizing plr-30 f-30 b-b' data-index='{{index}}' catchtap='storeCheck'>
           <view class="icon_wrap flex radius-50 {{item.checked ? 'bg-or bd-or':''}}" >
-            <span wx:if="{{item.checked}}" class='iconfont iconzhengque bg-ff bold f26'></span>
+            <span wx:if="{{item.checked}}" class='iconfont iconzhengque c-ff bold f-26'></span>
           </view>
           <view class="iconstore f-32 mr-10 flex-k"></view>
           <view class="flex-box onelist">{{item.store}}</view>
@@ -14,7 +14,7 @@
         <view class='orderGoods'>
           <block wx:for='{{item.goods}}' wx:key='idx' wx:for-index='idx' wx:for-item='it'>
             <view class='goods flex' data-index='{{index}}' data-idx='{{idx}}' catchtap='goodsCheck'>
-              <view class="icon_wrap flex radius-50 {{it.checked ? 'bg-or bd-or':''}}" ><span wx:if="{{it.checked}}" class='iconfont iconzhengque bg-ff bold f26'></span></view>
+              <view class="icon_wrap flex radius-50 {{it.checked ? 'bg-or bd-or':''}}" ><span wx:if="{{it.checked}}" class='iconfont iconzhengque c-ff bold f-26'></span></view>
               <image class='goodsImg' src='{{it.img}}'></image>
               <view class='goodsDetail flex-box flex-dir-col flex-x-b'>
                 <view class="onelist flex-box f-30lh-13">{{it.title}}</view>
@@ -43,10 +43,10 @@
   </view>
 
   <view class="height"></view>
-  <view class='foot flex shadow-t'>
+  <view class='foot flex shadow-t bg-ff'>
     <view class='footChoose flex-k ml-30' catchtap='totalCheck'>
       <view class="icon_wrap flex radius-50 {{totalCheck ? 'bg-or bd-or':''}}" >
-        <span wx:if="{{totalCheck}}" class='iconfont iconzhengque bg-ff bold f26'></span>
+        <span wx:if="{{totalCheck}}" class='iconfont iconzhengque c-ff bold f-26'></span>
       </view>
       <text>全选</text>
     </view>

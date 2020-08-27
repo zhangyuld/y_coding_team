@@ -17,7 +17,7 @@ Component({
     },
     text: {
       type: String,
-      value: '农家乐播ING',
+      value: 'LOADING',
     }
   },
   /**

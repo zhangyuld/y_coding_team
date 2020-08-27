@@ -18,7 +18,7 @@
 					<view class="f-26 c-red "><text class="f-50 bold">￥{{goods.goodsSpec[0]['here_price']}}</text>/斤</view>
 					<view class="tips f-20 c-red bd-red ml-20">5000斤起</view>
 				</view>
-				<view class="name f30 bold ">{{goods.name}}</view>
+				<view class="name f-30 bold ">{{goods.name}}</view>
 			</view>
 			<view class="head-share flex-dir-col flex-x-c c-a5 ml-30 mt-20 flex-k" data-type='choose' bindtap="shareHandle">
 				<span class="iconfont iconshare f-40"></span>
@@ -85,7 +85,7 @@
 
 	<view class="operation fixed flex t-c">
 		<view class="left flex">
-			<view class="item c-a5 f-20 sizing" data-url="pages/store/store" bindtap="skipPage">
+			<view class="item c-a5 f-20 sizing" data-check="true" data-url="pages/store/store" bindtap="skipPage">
 				<image src="/images/store.png"></image>
 				<text>店铺</text>
 			</view>
@@ -99,8 +99,8 @@
 			</view>
 		</view>
 		<view class="right flex flex-x-c flex-y-st">
-			<view class="item addCart bg-ff bg-or" data-type='choose' bindtap="shareHandle">分享赚</view>
-			<view class="item toBuy bg-ff bg-red" data-type='directBuy' bindtap="cartPoppupHandle">省钱购</view>
+			<view class="item addCart c-ff bg-or" data-type='choose' bindtap="shareHandle">分享赚</view>
+			<view class="item toBuy c-ff bg-red" data-type='directBuy' bindtap="cartPoppupHandle">省钱购</view>
 		</view>
 	</view>
 
@@ -158,8 +158,8 @@
 			</view>
 			<view class="operation flex mt-50">
 				<view class="right flex flex-x-c flex-y-st">
-					<view class="item addCart bg-ff bg-or" data-type="addToCart" bindtap="confirmHandle">加入购物车</view>
-					<view class="item toBuy bg-ff bg-red" data-type='directBuy' bindtap="confirmHandle">直接购买</view>
+					<view class="item addCart c-ff bg-or" data-type="addToCart" bindtap="confirmHandle">加入购物车</view>
+					<view class="item toBuy c-ff bg-red" data-type='directBuy' bindtap="confirmHandle">直接购买</view>
 				</view>
 			</view>
 		</view>

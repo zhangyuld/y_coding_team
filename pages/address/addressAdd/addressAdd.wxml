@@ -25,10 +25,10 @@
 	<view class="row flex b-b sizing" bindtap="chooseDefault">
 		<view class="left">设为默认地址</view>
 		<view class="right flex-box">
-			<view class="icon_wrap flex radius-50 {{info.is_default ? 'bg-m':''}}" ><span wx:if="{{info.is_default}}" class='iconfont iconzhengque bg-ff f28'></span></view>
+			<view class="icon_wrap flex radius-50 {{info.is_default ? 'bg-m':''}}" ><span wx:if="{{info.is_default}}" class='iconfont iconzhengque c-ff f-28'></span></view>
 		</view>
 	</view>
 </view>
 
 <view class="height"></view>
-<view class="save fixed f32 t-c bg-m bg-ff ">保存</view>
+<view class="save fixed f-32 t-c bg-m c-ff ">保存</view>

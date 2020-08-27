@@ -1,6 +1,6 @@
 const App = getApp();
 import METHODS from "../../utils/methods.js";
-import {  $index } from "../../api/indexApi.js";
+import { $index } from "../../api/indexApi.js";
 Page({
 
   data: {
@@ -59,7 +59,7 @@ Page({
       pageShow: true
     })
   },
-  onShow: function () {
+  onShow: function (e) {
     let that = this;
     that.getInfo();
   },
@@ -75,7 +75,6 @@ Page({
       id: 1
     })
     //三
-    
     await $index.getData({
       id: 1
     }).then(result => {
@@ -100,13 +99,14 @@ Page({
   },
   skipPage(e){
     let that = this;
-    let { url } = e.currentTarget.dataset;
-    METHODS.$navigationTo(url);
+    METHODS.$navigationTo(e);
   },
   onPullDownRefresh: function () {
     
   },
+  onHide(){
 
+  },
   onReachBottom: function () {
     
   },

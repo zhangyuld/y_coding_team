@@ -12,18 +12,18 @@
   </view>
 
   <view wx:if="{{!address}}" class="address flex sizing p-30 relative line-after bg-ff">
-    <span class="iconfont iconshouhuodizhi black bold f34 flex-k mr-20"></span>
+    <span class="iconfont iconshouhuodizhi black bold f-34 flex-k mr-20"></span>
     <view class="right flex-box flex sizing">
       <view class="right-info flex-box">
-        <view class="name black f32 bold">哈哈 15252525252</view>
-        <view class="tel gray f26">安徽省合肥市蜀山区望江路69号</view>
+        <view class="name black f-32 bold">哈哈 15252525252</view>
+        <view class="tel c-a8 f-26">安徽省合肥市蜀山区望江路69号</view>
       </view>
-      <span class="iconfont iconxiangyoujiantou gray f28 flex-k ml-20"></span>
+      <span class="iconfont iconxiangyoujiantou c-a8 f-28 flex-k ml-20"></span>
     </view>
   </view>
 
   <view class='goods_list sizing plr-30 bg-ff mtb-20'>
-    <view class='tit black f30 b-b lh-100'>商品列表</view>
+    <view class='tit black f-30 b-b lh-100'>商品列表</view>
     
     <template is="order_goods" ></template>
 
@@ -31,7 +31,7 @@
   </view>
 
   <view class='goods_list sizing plr-30 bg-ff mtb-20'>
-    <view class='tit black f30 b-b lh-100'>订单金额</view>
+    <view class='tit black f-30 b-b lh-100'>订单金额</view>
     <view class='tit f-28 b-b t-r lh-80 flex'>
       <view>商品金额</view>
       <text class="c-red bold">¥398.00</text>
