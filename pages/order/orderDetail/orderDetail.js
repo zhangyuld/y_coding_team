@@ -1,5 +1,5 @@
 const App = getApp();
-const METHODS = require('../../../utils/methods.js').default;
+import METHODS from "../../../utils/methods.js";
 Page({
 
   data: {

@@ -1,9 +1,0 @@
-
-
-.list:last-child{
-  margin-bottom: 0;
-}
-.listImg{
-  width: 100%;
-  height: 400rpx;
-}

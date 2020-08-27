@@ -26,7 +26,7 @@
       <view class="flex lh-100">
         <view class="c-66 flex-k">合计：<text class="c-red">¥123.00</text></view>
         <view class="flex f-26">
-          <view class="lh-44 plr-20 radius-5 bb-a5">取消</view>
+          <view class="lh-44 plr-20 radius-5 bd-a5">取消</view>
           <view class="lh-44 plr-20 radius-5 bd-m c-m ml-20">付款</view>
         </view>
       </view>

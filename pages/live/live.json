@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "y_search": "/components/search/search",
-    "y_swiper": "/components/swiper/swiper"
-  },
-  "navigationBarTitleText": "直播列表"
-}

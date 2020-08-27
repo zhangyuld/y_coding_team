@@ -48,7 +48,7 @@
 
   <view class="height"></view>
   <view class="footer-fixed flex flex-x-e f-26 sizing plr-30">
-    <view class="lh-44 plr-20 radius-5 bb-a5">取消</view>
+    <view class="lh-44 plr-20 radius-5 bd-a5">取消</view>
     <view class="lh-44 plr-20 radius-5 bd-m c-m ml-20">付款</view>
   </view>
 </view>

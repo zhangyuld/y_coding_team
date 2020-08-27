@@ -1,0 +1,12 @@
+<view class="rule-container" wx:if="{{is_show}}">
+	<view class="bg" bindtap="ruleHandle"></view>
+	<view class="rule-contnet animated slideInUp faster">
+		<view class="rule-title lh-100 t-c f-36 bold">{{title}}</view>
+		<view class="rule-con f-28 c-88 sizing plr-30 pb-30">
+			<text>{{content}}</text>
+		</view>
+		<view class="rule-foot sizing ptb-20 plr-30">
+			<view class="lh-80 f-32 bold t-c bg-red c-ff radius-50" bindtap="ruleHandle">我知道了</view>
+		</view>
+	</view>
+</view>

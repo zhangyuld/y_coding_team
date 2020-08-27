@@ -1,4 +1,6 @@
+@import "/wxParse/wxParse.wxss";
 @import "/utils/iconfont.wxss";
+@import "/utils/animate.wxss";
 @import '/utils/common.wxss';
 
 .c-m{ color: #70BB2B!important; }
@@ -20,12 +22,8 @@
 .bd-m{ border: 1px solid #70BB2B!important; }
 .bd-or{ border: 1px solid #FEAB1E!important; }
 .bd-red{ border: 1px solid #E5460A!important; }
-.bb-a5{border: 1px solid #a5a5a5!important;}
+.bd-a5{border: 1px solid #a5a5a5!important;}
 
-/* lulu */
-.c-m { color: #70BB2B; } 
-.m-bg { background: #70BB2B; }
-.b-m { border: 1px solid #70BB2B; }
 
 
 /* 默认样式清除 */

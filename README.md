@@ -9,18 +9,18 @@
 1、简单全局的使用：
 
 app.js 中引用 methods.js  
-methods: require('/utils/methods.js').default
+METHODS: require('/utils/methods.js').default
 
 在相应页面中  
 页面头部：const app = getApp()  
-使用的位置：app.methods.$http(...)即可
+使用的位置：app.METHODS.$http(...)即可
 
 
 2、页面的按需引用
 
 在页面中  
-const { $http } = require('/utils/methods.js').default  
-使用的位置：$http(...)即可
+import METHODS from "/utils/methods.js';
+使用的位置：METHODS.$http(...)即可
 
 3、现有的封装方法  
 
@@ -60,11 +60,8 @@ $showSuccess
 失败的modal提示  
 $showError
 
-promisify化的request请求,抛出位置无法定义  
-$http
-
 Promise化的request请求,可以定义抛出,仅code=1时抛出数据  
-$request
+$http
 
 简单的get请求封装,已启用,请使用$http或$request  
 $get

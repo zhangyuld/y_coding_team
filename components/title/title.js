@@ -1,5 +1,5 @@
 const App = getApp();
-const METHODS = require('../../utils/methods').default;
+import METHODS from "../../utils/methods.js";
 Component({
   options: {
   multipleSlots: true // 在组件定义时的选项中启用多slot支持

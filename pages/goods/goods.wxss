@@ -9,9 +9,6 @@ page{ background: #F4F6FA; }
 
 .tips{line-height: 36rpx;padding: 0 10rpx;border-radius: 5rpx;}
 
-.live{width: 100%;}
-.live .logo{width: 80rpx;height: 80rpx;}
-
 .head-spec{width: 100%;}
 .head-spec .title{width: 100rpx;}
 .head-spec .content{width: 100%;}

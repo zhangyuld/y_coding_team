@@ -2,11 +2,14 @@
  * @name 请先移至最底部查看页面方法内容
  */
 
+import Util from "/util.js";
+import SITEINFO from "../siteInfo.js";
 
-const util = require('./util.js');
-const QQMapWX = require('./qqmap-wx-jssdk.min.js');
+import QQMapWX from'./qqmap-wx-jssdk.min.js';
+
 let throttle = true;
 
+// promisify方法,可以将多种小程序的api简单封装成promise方法,确定是抛出位置无法自定义
 let $promisify = function(api) {
   return (opt, ...arg) => {
     return new Promise((resolve, reject) => {
@@ -21,27 +24,28 @@ let $login = $promisify(wx.login);
 let $getUserInfo = $promisify(wx.getUserInfo)
 let $getImageInfo = $promisify(wx.getImageInfo);
 let $saveImageToPhotosAlbum = $promisify(wx.saveImageToPhotosAlbum);
+let $getLocation =  $promisify(wx.getLocation);
+let $chooseLocation =  $promisify(wx.chooseLocation);
+let $socket =  $promisify(wx.connectSocket);
 let $requestApi =  $promisify(wx.request);
 
 
-let $host = 'https://njlb.vshop365.cn/index.php?s=/api/'
+let $host = SITEINFO.host;
+let $wxapp_id = "10001"
 
 let $tabBarLinks = [
   'pages/index/index',
-  'pages/sort/sort',
+  "pages/category/category",
+  'pages/live/live',
   'pages/cart/cart',
   'pages/mine/mine'
 ]
 
 // 防止重复点击
-let $singleClick = function(fn,params,timeout=500){
+let $singleClick = function(fn,timeout=200){
   let that = this;
   if(throttle){
-    if(typeof fn == 'function'){
-      fn();
-    }else{
-      that[fn](params)
-    }
+    fn();
   }else{
     return false;
   }
@@ -51,16 +55,18 @@ let $singleClick = function(fn,params,timeout=500){
   },timeout)
 }
 // 获取分享者的id
-let $saveRefereeId = function(refereeId) {
-  if (!wx.getStorageSync('referee_id'))
-    wx.setStorageSync('referee_id', refereeId);
+let $saveInvitorId = function(invitorId) {
+  if (!wx.getStorageSync('invitor_id'))
+    wx.setStorageSync('invitor_id', invitorId);
 }
-
 // 获取场景值(scene)
 let $getSceneData = function(query) {
-  return query.scene ? util.scene_decode(query.scene) : {};
+  return query.scene ? Util.scene_decode(query.scene) : {};
 }
-
+// 当前用户id
+let $getUserId = function() {
+  return wx.getStorageSync('user_id') || 0;
+}
 
 // 显示成功提示框
 let $showSuccess = function(msg, callback) {
@@ -90,11 +96,25 @@ let $showError = function(msg, callback) {
     }
   });
 }
+// 显示文字提示框
+let $showMsg = function(msg, callback) {
+  wx.showToast({
+    title: msg,
+    icon: 'none',
+    mask: true,
+    duration: 1500,
+    success() {
+      callback && (setTimeout(function() {
+        callback();
+      }, 1500));
+    }
+  });
+}
 
 
 let $http = async function(opt, arg) {
   let that = this;
-  let { showLoading=false,checkLogin=false} = arg;
+  let { showLoading=false,checkLogin=false} = arg || {};
   // 判断是否登录
   if(checkLogin){
     let confirmLogin = that.$confirmLogin();
@@ -109,25 +129,24 @@ let $http = async function(opt, arg) {
       mask: true,
     })
   }
+  // 获取个人token
+  const token = wx.getStorageSync("token") || '0470cf99a6355cbbc27f54f31b2fc631';
 
   // 从opt中结构参数
   let { url, method='GET', data={}, header } = opt;
   // 配置请求地址
   opt.url = $host + url;
-  // 获取个人token
-  const user_token = wx.getStorageSync("user_token") || '';
-  
-  // if(method == "POST" && header == undefined){
-  //   opt.header = {
-  //     'content-type': 'application/json',
-  //     Authorization: "Bearer " + user_token,
-  //   }
-  // }
+  opt.data = Object.assign(data,{
+    user_id: wx.getStorageSync("user_id") || '',
+    token,
+    wxapp_id: $wxapp_id,
+    invitor_id:  wx.getStorageSync('invitor_id') ? wx.getStorageSync('invitor_id') : 0,
+  })
   // 根据token判断请求头
-  if(user_token !== ''){
+  if(token !== ''){
     opt.header = {
       'content-type': 'application/json',
-      Authorization: "Bearer " + user_token,
+      Authorization: "Bearer " + token,
     }
   }else{
     opt.header = {
@@ -140,73 +159,26 @@ let $http = async function(opt, arg) {
   //   data: {},
   //   msg: '',
   // }
-
-  let res = await $requestApi(opt)
-  wx.hideLoading();
-  if(res.data.code == -1){
-    wx.navigateTo({
-      url: '/pages/account/authorize/authorize',
-    })
-    return false
-  }
-  if(res.data.code == 1){
-    return res.data.data
-  }else{
-    wx.showToast({
-      title: res.data.msg,
-      icon: 'none',
-      mask: false,
-    })
-    return false
-  }
-};
-
-
-let $request = (opt, arg) => {
-  let that = this;
-  let { showLoading=false,checkLogin=false} = arg;
-  // 判断是否登录
-  if(checkLogin){
-    let confirmLogin = that.$confirmLogin();
-    if(!confirmLogin){
-      return false;
-    }
-  }
-  
-  // 开始promise封装
-  return new Promise((resolve, reject) => {
-    // 判断是否显示loading
-    if (showLoading) {
-      wx.showLoading({
-        title: '加载中...',
-        mask: true,
-      })
-    }
-
-    // 从opt中结构参数
-    let { url, method='GET', data={}, header } = opt;
-    // 配置请求地址
-    opt.url = $host + url;
-    // 获取个人token
-    const user_token = wx.getStorageSync("user_token") || '';
-    
-    // if(method == "POST" && header == undefined){
-    //   opt.header = {
-    //     'content-type': 'application/json',
-    //     Authorization: "Bearer " + user_token,
-    //   }
-    // }
-    // 根据token判断请求头
-    if(user_token !== ''){
-      opt.header = {
-        'content-type': 'application/json',
-        Authorization: "Bearer " + user_token,
-      }
-    }else{
-      opt.header = {
-        'content-type': 'application/json'
-      }
-    }
+  // promiseify方法,无法自定义抛出
+  //let res = await $requestApi(opt)
+  //wx.hideLoading();
+  //if(res.data.code == -1){
+  //  wx.navigateTo({
+  //    url: '/pages/account/authorize/authorize',
+  //  })
+  //  return false
+  //}
+  //if(res.data.code == 1){
+  //  return res.data.data
+  //}else{
+  //  wx.showToast({
+  //    title: res.data.msg,
+  //    icon: 'none',
+  //    mask: false,
+  //  })
+  //  return false
+  //}
+  return new Promise((resolve,reject) => {
     wx.request({
       url: opt.url,
       method: method,
@@ -220,7 +192,7 @@ let $request = (opt, arg) => {
         } else if (res.data.code == -1) {
           // code=-1时,后台判断未登陆
           wx.navigateTo({
-            url: "/pages/login/login",
+            url: "/pages/account/authorize/authorize",
           });
         } else {
           // code=0时做相应提示
@@ -232,7 +204,7 @@ let $request = (opt, arg) => {
       },
       fail(err) {
         // 失败时抛出
-        reject(res)
+        reject(err)
         wx.hideLoading();
         wx.showToast({
           title: "网络连接失败",
@@ -240,7 +212,7 @@ let $request = (opt, arg) => {
         });
       },
     });
-  });
+  })
 };
 
 // get方法
@@ -275,7 +247,6 @@ let $makeRequest = function(url, method, data, success, fail, complete) {
   wx.showNavigationBarLoading();
   // 构造请求参数
   data = data || {};
-  // data.wxapp_id = getWxappId(); //商城id
   data.token = wx.getStorageSync('token')||'';
   data.user_id = wx.getStorageSync('userId') || '';
   
@@ -315,14 +286,31 @@ let $makeRequest = function(url, method, data, success, fail, complete) {
 // 点击事件的验证登录
 let $confirmLogin = function(callback) {
   let that = this;
-  let isLogin = wx.getStorageSync('isLogin') || false;
-  if (!isLogin) {
+  let user_id = wx.getStorageSync('user_id') || false;
+  let getPhone = wx.getStorageSync('getPhone') || false;
+  
+  callback && callback()
+  return true
+  
+  if (!user_id) {
     wx.showModal({
       content: '请先授权后操作！',
       success: (res) => {
         if (res.confirm) {
           wx.navigateTo({
             url: '/pages/account/authorize/authorize',
+          })
+        }
+      }
+    })
+    return false
+  }else if(!getPhone){
+    wx.showModal({
+      content: '请先授权手机号后操作！',
+      success: (res) => {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '/pages/account/phone/phone',
           })
         }
       }
@@ -335,7 +323,7 @@ let $confirmLogin = function(callback) {
 }
 
 //跳转事件
-let $navigationTo = function(e){
+let $navigationTo = function(e,fn){
   let that = this;
   let url;
   if(typeof e == "string"){
@@ -363,7 +351,7 @@ let $navigationTo = function(e){
   } else {
     // 普通页面
     wx.navigateTo({
-      url: '/' + url
+      url: '/' + url,
     });
   }
 }
@@ -371,9 +359,9 @@ let $navigationTo = function(e){
 // 获取分享参数
 let $getShareUrlParams = function(params) {
   let that = this;
-  // return util.urlEncode(Object.assign({
-  //   referee_id: getUserId()
-  // }, params));
+  return Util.urlEncode(Object.assign({
+    invitor_id: $getUserId()
+  }, params));
 }
 
 //拨打电话
@@ -395,7 +383,7 @@ let $uploadImage = function(img,callback){
     name: 'image',
     header: {
       "Content-type": "multipart/form-data",
-      'Authorization': 'Bearer ' + wx.getStorageSync('user_token')
+      'Authorization': 'Bearer ' + wx.getStorageSync('token')
     },
     success: function (res) {
       console.log(res)
@@ -468,6 +456,40 @@ let $uploadMoreImage = function(sumNumber, add_img, callback){
   })
 }
 
+//萤火虫的提交表单时上传图片
+let $uploadFile = function(imageList, callBack, formData) {
+  let uploaded = [];
+  // 文件上传
+  let i = 0;
+  imageList.forEach(function(filePath, fileKey) {
+    wx.uploadFile({
+      url: $host + 'upload/image',
+      filePath: filePath,
+      name: 'iFile',
+      formData: {
+        wxapp_id: $wxapp_id,
+        token: wx.getStorageSync('token')
+      },
+      success: function(res) {
+        let result = typeof res.data === "object" ? res.data : JSON.parse(res.data);
+        if (result.code === 1) {
+          uploaded[fileKey] = result.data.file_id;
+        }
+      },
+      complete: function() {
+        i++;
+        if (imageList.length === i) {
+          // 所有文件上传完成
+          console.log('upload complete');
+          formData['images'] = uploaded;
+          // 执行回调函数
+          callBack && callBack(formData);
+        }
+      }
+    });
+  });
+}
+
 //小于10的格式化函数
 let $numFormat = function(param) {
   return param < 10 ? '0' + param : param;
@@ -525,39 +547,47 @@ let $wxPayment = function(option) {
 // 逆解析地址
 let $getUserAddress = function(){
   let that = this
-  let qqmapsdk = new QQMapWX({
-    key: 'KUTBZ-7MFCP-5RUDQ-VXJ7V-CUIIE-46B65'
-  });
-  wx.getLocation({
-    type: 'gcj02',
-    success (res) {
-      const latitude = res.latitude;
-      const longitude = res.longitude;
-      qqmapsdk.reverseGeocoder({
-        location: {
-          latitude: latitude,
-          longitude: longitude
-        },
-        success: function (res) {
-          if(res.message === "query ok"){
-            wx.setStorageSync('address_info', res.result)
-          }else{
-            wx.showToast({
-              title: '获取地址失败',
-              icon: 'none',
-              mask: true
-            })
+  return new Promise((resolve,reject) => {
+
+    let qqmapsdk = new QQMapWX({
+      key: 'KUTBZ-7MFCP-5RUDQ-VXJ7V-CUIIE-46B65'
+    });
+    wx.getLocation({
+      type: 'gcj02',
+      success (res) {
+        const latitude = res.latitude;
+        const longitude = res.longitude;
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: latitude,
+            longitude: longitude
+          },
+          success: function (res) {
+            if(res.message === "query ok"){
+              wx.setStorageSync('address_info', res.result)
+              wx.setStorageSync('user_address', res.result.ad_info.city)
+              resolve(true)
+            }else{
+              wx.showToast({
+                title: '获取地址失败',
+                icon: 'none',
+                mask: true
+              })
+              resolve(false)
+            }
+          },
+          fail: function (res) {
+            console.log(res);
+          },
+          complete: function (res) {
+            // console.log(res);
           }
-        },
-        fail: function (res) {
-          console.log(res);
-        },
-        complete: function (res) {
-          // console.log(res);
-        }
-      });
-    },
+        });
+      },
+    })
   })
+  
+  
 }
 
 //角度转弧度
@@ -587,34 +617,51 @@ let $getDistance = function(position1, position2){
   return s;
 }
 
+let $setBigNum = function(num){
+  let that = this;
+  if(num > 10000){
+    num = (num / 10000).toFixed(1) + 'W'
+  }else{
+    num = num
+  }
+  return num
+}
+
 export default {
-  $promisify,                 //官方提供的promisify
-  $requestApi,                //将wx.request进行promisify化
-  $login,                     //将wx.login进行promisify化
-  $getUserInfo,               //将wx.getUserInfo进行promisify化
-  $getImageInfo,              //将wx.getImageInfo进行promisify化
-  $saveImageToPhotosAlbum,    //将wx.gsaveImageToPhotosAlbum进行promisify化
-  $tabBarLinks,               //当前小程序的tabbar页面路径
-  $singleClick,               //节流器,默认每500ms点击一次
-  $saveRefereeId,             //获取分享者的id
-  $getSceneData,              //获取场景值(scene)
-  $showSuccess,               //成功的toast提示
-  $showError,                 //失败的modal提示
-  $http,                      //promisify化的request请求,抛出位置无法定义
-  $request,                   //Promise化的request请求,可以定义抛出,仅code=1时抛出数据
-  $get,                       //简单的get请求封装,已启用,请使用$http或$request
-  $post,                      //简单的post请求封装,已启用,请使用$http或$request
-  $makeRequest,               //根据get/post传入不同开始请求
-  $confirmLogin,              //判断登陆
-  $navigationTo,              //导航跳转,可判断tabbar跳转
-  $getShareUrlParams,         //获取风向参数
-  $makePhone,                 //拨打电话
-  $uploadImage,               //简单的单张图上传
-  $uploadMoreImage,           //多张图的上传,暂不使用,后续优化
-  $numFormat,                 //格式化时间样式
-  $countDown,                 //根据传入的截止时间倒计时
-  $wxPayment,                 //微信支付
-  $getUserAddress,            //获取用户地址并反解析
-  $getRad,                    //角度转弧度
-  $getDistance                //计算两个经纬度之间的距离
+  $promisify,                 // 官方提供的promisify
+  $requestApi,                // 将wx.request进行promisify化
+  $login,                     // 将wx.login进行promisify化
+  $getUserInfo,               // 将wx.getUserInfo进行promisify化
+  $getImageInfo,              // 将wx.getImageInfo进行promisify化
+  $saveImageToPhotosAlbum,    // 将wx.saveImageToPhotosAlbum进行promisify化
+  $getLocation,               // 将wx.getLocation进行promisify化
+  $chooseLocation,            // 将wx.chooseLocation进行promisify化
+  $socket,                    // 创建socket
+  $tabBarLinks,               // 当前小程序的tabbar页面路径
+  $host,                      // 请求的域名前缀
+  $wxapp_id,                  // 小程序的id
+  $singleClick,               // 节流器,默认每500ms点击一次
+  $saveInvitorId,             // 获取分享者的id
+  $getSceneData,              // 获取场景值(scene)
+  $showSuccess,               // 成功的toast提示
+  $showError,                 // 失败的modal提示
+  $showMsg,                   // 仅文字的提示
+  $http,                      // promisify化的request请求,抛出位置无法定义 || Promise化的request请求,可以定义抛出,仅code=1时抛出数据
+  $get,                       // 简单的get请求封装,已启用,请使用$http或$request
+  $post,                      // 简单的post请求封装,已启用,请使用$http或$request
+  $makeRequest,               // 根据get/post传入不同开始请求
+  $confirmLogin,              // 判断登陆
+  $navigationTo,              // 导航跳转,可判断tabbar跳转
+  $getShareUrlParams,         // 获取风向参数
+  $makePhone,                 // 拨打电话
+  $uploadImage,               // 简单的单张图上传
+  $uploadMoreImage,           // 多张图的上传,暂不使用,后续优化
+  $uploadFile,                // 萤火虫的表单提交上传图片
+  $numFormat,                 // 格式化时间样式
+  $countDown,                 // 根据传入的截止时间倒计时
+  $wxPayment,                 // 微信支付
+  $getUserAddress,            // 获取用户地址并反解析
+  $getRad,                    // 角度转弧度
+  $getDistance,               // 计算两个经纬度之间的距离
+  $setBigNum,                 // 格式化较大的数字
 }

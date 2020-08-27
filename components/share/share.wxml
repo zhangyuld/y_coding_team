@@ -2,7 +2,7 @@
 <!-- 商品海报 弹出层 -->
 <view class="share_dialog" wx:if="{{status}}">
   <view class="bg" data-type="close" bindtap='shareHandle'></view>
-  <view class='share'>
+  <view class='share animated fadeInUp faster'>
     <view class='shareBtnCon'>
       <button class='shareBtn' data-type="close" bindtap='shareHandle' open-type='share' hover-class='none'>
         <image class="logo" src='/images/shareway1.png'></image>

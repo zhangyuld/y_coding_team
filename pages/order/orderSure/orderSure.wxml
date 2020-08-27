@@ -34,7 +34,7 @@
 	<!-- 会员卡 -->
 	<view class="item b-b sizing">
 		<view class="row flex">
-			<text class="tips white bg-m f23 sizing t-c">卡</text>
+			<text class="tips bg-ff bg-m f23 sizing t-c">卡</text>
 			<view class="info flex-box">9.5折会员卡</view>
 			<view class="right c-red">-<text class="rmb f20">￥</text>1.00</view>
 		</view>
@@ -42,7 +42,7 @@
 	<!-- 积分 -->
 	<view class="item b-b sizing">
 		<view class="row flex">
-			<text class="tips white bg-m f23 sizing t-c">分</text>
+			<text class="tips bg-ff bg-m f23 sizing t-c">分</text>
 			<view class="info flex-box">使用积分</view>
 			<view class="right">
 				<switch bindchange="integralChange" color="#70BB2B"/>
@@ -56,14 +56,14 @@
 	<!-- 优惠券 -->
 	<view class="item b-b sizing">
 		<view class="row flex" bindtap="couponHandle">
-			<text class="tips white bg-m f23 sizing t-c">券</text>
+			<text class="tips bg-ff bg-m f23 sizing t-c">券</text>
 			<view class="info flex-box">优惠券</view>
 			<view wx:if="{{coupon_id}}" class="right c-red">
 				-<text class="rmb f20">￥</text>1.00
 				<span class="iconfont iconxiangyoujiantou f24"></span>
 			</view>
 			<view wx:else class="right">
-				<text class="coupon f24 sizing white bg-m">4张可用</text>
+				<text class="coupon f24 sizing bg-ff bg-m">4张可用</text>
 				<span class="iconfont iconxiangyoujiantou f24"></span>
 			</view>
 		</view>
@@ -85,7 +85,7 @@
 <view class="height"></view>
 <view class="to_pay fixed flex"> 
   <view class="flex-box f32 sizing plr-30">实际款：<text class="bold c-red">￥16.00</text></view>
-  <view class="white m-bg f30 t-c sizing plr-50" bindtap="payOrderPopupHandle">立即支付</view>
+  <view class="bg-ff bg-m f30 t-c sizing plr-50" bindtap="payOrderPopupHandle">立即支付</view>
 </view>
 
 
@@ -103,7 +103,7 @@
 				<view class="name black f32">5元代金券</view>
 				<view class="time f26 gray">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 1 ? 'active':'hide'}} absolute m-bg"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 1 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
 		</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="2" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
@@ -114,7 +114,7 @@
 				<view class="name black f32">8元代金券</view>
 				<view class="time f26 gray">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 2 ? 'active':'hide'}} absolute m-bg"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 2 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
 		</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="3" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
@@ -125,7 +125,7 @@
 				<view class="name black f32">10元代金券</view>
 				<view class="time f26 gray">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 3 ? 'active':'hide'}} absolute m-bg"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 3 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
 		</view>
 		<view class="item bg-ff radius flex sizing relative" data-index="4" bindtap="selectCouponHandle">
 			<view class="left t-c relative flex">
@@ -136,7 +136,7 @@
 				<view class="name black f32">15元代金券</view>
 				<view class="time f26 gray">2019-09-04~2019-11-04</view>
 			</view>
-			<view class="{{coupon_id == 4 ? 'active':'hide'}} absolute m-bg"><span class='iconfont iconzhengque f32 white'></span></view>
+			<view class="{{coupon_id == 4 ? 'active':'hide'}} absolute bg-m"><span class='iconfont iconzhengque f32 white'></span></view>
 		</view>
 	</view>
 </view>
@@ -152,17 +152,17 @@
 				<view class="mid f30 sub-gray flex-box">余额<text class="f26">（账户余额￥8040.00）</text></view>
 				<view class="right f30 c-m flex">
 					<text class="price">-￥17</text>
-					<view class="icon_wrap flex radius-50 flex sizing {{type == 'balancePay' ? 'm-bg':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'balancePay'}}" class='iconfont iconzhengque white f24'></span></view>
+					<view class="icon_wrap flex radius-50 flex sizing {{type == 'balancePay' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'balancePay'}}" class='iconfont iconzhengque bg-ff f24'></span></view>
 				</view>
 			</view>
 			<view class="item flex" data-type='wxPay' bindtap="payTypeHandle">
 				<view class="left flex"><span class='iconfont iconweixincopy f40'></span></view>
 				<view class="mid f30 sub-gray flex-box">微信支付</view>
 				<view class="right f30 c-m flex">
-					<view class="icon_wrap flex radius-50 flex sizing {{type == 'wxPay' ? 'm-bg':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'wxPay'}}" class='iconfont iconzhengque white f24'></span></view>
+					<view class="icon_wrap flex radius-50 flex sizing {{type == 'wxPay' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{type == 'wxPay'}}" class='iconfont iconzhengque bg-ff f24'></span></view>
 				</view>
 			</view>
 		</view>
-		<view class="to_pay_btn m-bg white radius-10 f32 t-c" bindtap="payOrderHandle">立即支付</view>
+		<view class="to_pay_btn bg-m bg-ff radius-10 f32 t-c" bindtap="payOrderHandle">立即支付</view>
 	</view>
 </view>

@@ -1,89 +1,387 @@
 <template name="goods">
-  <view class="goods-item flex flex-y-st sizing ptb-30 b-b" data-url='pages/goods/goods' bindtap="skipPage">
-    <view class="logo relative flex-k box-240 mr-20 radius-20">
-      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
-    </view>
-    <view class="detail flex-dir-col flex-x-b flex-box">
-      <view class="title twolist lh-14">商品名称商品名称商品名称商品名称商品商品名称商品名称商品名称商品名称商品</view>
-      <view class="text f-26 c-a5 onelist">已销售654件</view>
-      <view class="info flex">
-        <view class="price c-red f-26">¥<text class="f-36 y_bold">11.8</text></view>
-        <view class="btn bg-or f-24">进入直播间</view>
-      </view>
-    </view>
-  </view>
-  <view class="goods-item flex flex-y-st sizing ptb-20 b-b" data-url='pages/goods/goods' bindtap="skipPage">
-    <view class="logo relative flex-k box-240 mr-20 radius-20">
-      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
-    </view>
-    <view class="detail flex-dir-col flex-x-b flex-box">
-      <view class="title twolist lh-14">商品名称商品名称商品名称商品名称商品商品名称商品名称商品名称商品名称商品</view>
-      <view class="text f-26 c-a5 onelist">已销售654件</view>
-      <view class="info flex">
-        <view class="price c-red f-26">¥<text class="f-36 y_bold">11.8</text></view>
-        <view class="btn bg-or f-24">进入直播间</view>
-      </view>
-    </view>
-  </view>
-</template>
-
-
-<template name="order_goods">
-  <view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
-    <view class="logo relative flex-k box-150 mr-20 radius-20 ">
-      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
-    </view>
-		<view class='detail flex-dir-col flex-x-b flex-box'>
-			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
-			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
-			<view class='info flex'>
-				<view class='left flex-box flex'>
-					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
-				</view>
-				<view class='num f-26 gray'>x1</view>
+	<view class="goods-item flex flex-y-st sizing ptb-30 b-b" data-url='pages/goods/goods' bindtap="skipPage">
+		<view class="logo relative flex-k box-240 mr-20 radius-20">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+		</view>
+		<view class="detail flex-dir-col flex-x-b flex-box">
+			<view class="title twolist lh-14">商品名称商品名称商品名称商品名称商品商品名称商品名称商品名称商品名称商品</view>
+			<view class="text f-26 c-a5 onelist">已销售654件</view>
+			<view class="info flex">
+				<view class="price c-red f-26">¥<text class="f-36 y_bold">11.8</text></view>
+				<view class="btn bg-or f-24">进入直播间</view>
 			</view>
 		</view>
 	</view>
-  <view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
-    <view class="logo relative flex-k box-150 mr-20 radius-20 ">
-      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
-    </view>
-		<view class='detail flex-dir-col flex-x-b flex-box'>
-			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
-			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
-			<view class='info flex'>
-				<view class='left flex-box flex'>
-					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
-				</view>
-				<view class='num f-26 gray'>x1</view>
+	<view class="goods-item flex flex-y-st sizing ptb-20 b-b" data-url='pages/goods/goods' bindtap="skipPage">
+		<view class="logo relative flex-k box-240 mr-20 radius-20">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+		</view>
+		<view class="detail flex-dir-col flex-x-b flex-box">
+			<view class="title twolist lh-14">商品名称商品名称商品名称商品名称商品商品名称商品名称商品名称商品名称商品</view>
+			<view class="text f-26 c-a5 onelist">已销售654件</view>
+			<view class="info flex">
+				<view class="price c-red f-26">¥<text class="f-36 y_bold">11.8</text></view>
+				<view class="btn bg-or f-24">进入直播间</view>
 			</view>
 		</view>
 	</view>
 </template>
 
 <template name="goods_two">
-  <view class="goods-two bg-ff ml-30 mb-30">
-    <view class="logo relative flex-k box-150 radius-20 ">
-      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
-    </view>
-    <view class="detail flex flex-dir-col flex-x-b flex-y-s sizing plr-20">
-      <view class="twolist mt-15">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
-      <view class="info flex mt-15">
-        <view class="f-26 c-a5"><text class="c-red">¥</text><text class="c-red f-36 bold">11.8</text>/起</view>
-        <view class="bg-or f-26 lh-60 c-ff radius-50 plr-20">马上抢</view>
-      </view>
-    </view>
-  </view>
-  <view class="goods-two bg-ff ml-30 mb-30">
-    <view class="logo relative flex-k box-150 radius-20 ">
-      <image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
-    </view>
-    <view class="detail flex flex-dir-col flex-x-b flex-y-s sizing plr-20">
-      <view class="twolist mt-15">迷你喷雾迷你喷</view>
-      <view class="info flex mt-15">
-        <view class="f-26 c-a5"><text class="c-red">¥</text><text class="c-red f-36 bold">11.8</text>/起</view>
-        <view class="bg-or f-26 lh-60 c-ff radius-50 plr-20">马上抢</view>
-      </view>
-    </view>
-  </view>
+	<view class="goods-two bg-ff ml-30 mb-30">
+		<view class="logo relative flex-k box-150 radius-20 ">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+		</view>
+		<view class="detail flex flex-dir-col flex-x-b flex-y-s sizing plr-20">
+			<view class="twolist mt-15">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class="info flex mt-15">
+				<view class="f-26 c-a5"><text class="c-red">¥</text><text class="c-red f-36 bold">11.8</text>/起</view>
+				<view class="bg-or f-26 lh-60 c-ff radius-50 plr-20">马上抢</view>
+			</view>
+		</view>
+	</view>
+	<view class="goods-two bg-ff ml-30 mb-30">
+		<view class="logo relative flex-k box-150 radius-20 ">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+		</view>
+		<view class="detail flex flex-dir-col flex-x-b flex-y-s sizing plr-20">
+			<view class="twolist mt-15">迷你喷雾迷你喷</view>
+			<view class="info flex mt-15">
+				<view class="f-26 c-a5"><text class="c-red">¥</text><text class="c-red f-36 bold">11.8</text>/起</view>
+				<view class="bg-or f-26 lh-60 c-ff radius-50 plr-20">马上抢</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<!--订单中的商品列表-->
+<template name="order_goods">
+	<view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
+		<view class="logo relative flex-k box-150 mr-20 radius-20 ">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+		</view>
+		<view class='detail flex-dir-col flex-x-b flex-box'>
+			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
+			<view class='info flex'>
+				<view class='left flex-box flex'>
+					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
+				</view>
+				<view class='num f-26 gray'>x1</view>
+			</view>
+		</view>
+	</view>
+	<view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
+		<view class="logo relative flex-k box-150 mr-20 radius-20 ">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' mode='widthFix' />
+		</view>
+		<view class='detail flex-dir-col flex-x-b flex-box'>
+			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
+			<view class='info flex'>
+				<view class='left flex-box flex'>
+					<view class='price black bold f-26 c-red'>￥<Text class='f-32'>15.00</Text></view>
+				</view>
+				<view class='num f-26 gray'>x1</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<!--订单详情的商品列表-->
+<template name="order_detail">
+	<view class='goods-item flex flex-y-st sizing ptb-30 b-b'>
+		<view class="logo relative flex-k box-150 mr-20 radius-20 ">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" alt='' />
+		</view>
+		<view class='detail flex-dir-col flex-x-b flex-box'>
+			<view class='title f-32 onelist lh-14'>迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class='text f-26 c-a5 onelist'>小型+常温+常规辣</view>
+			<view class='info flex'>
+				<view class='left flex-box flex'>
+					<view class='price black bold f-26 c-red'>￥<text class='f-32'>{9.99</text><text class='num f-26 gray'> x10</text></view>
+				</view>
+				<view class="plr-20 bg-m c-ff f-26 t-c lh-44 radius-5" wx:if="{{refund}}">已申请售后</view>
+				<view class="plr-20 bg-m c-ff f-26 t-c lh-44 radius-5" data-id="{{order_goods_id}}" catchtap="onApplyRefund" wx:elif="{{order.isAllowRefund}}">申请售后</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<!--商品收藏-->
+<template name="goodsCollect">
+	<view class="goods-item flex flex-y-st sizing ptb-30 b-b" data-url="pages/goods/goods?id={{goods.goods_id}}" bindtap="skipPage">
+		<view class="logo relative flex-k box-240 mr-20 radius-20">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+		</view>
+		<view class="detail flex-dir-col flex-x-b flex-box">
+			<view class="title twolist lh-14">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class="text f-26 c-a5 onelist">已销售100件</view>
+			<view class="info flex">
+				<view class="price c-red f-26">¥<text class="f-36 bold">9.99</text></view>
+				<view class="btn bg-or f-24" wx:if="{{from == 'collect'}}" data-index="{{index}}" data-id="{{item_id}}" catchtap="collection">取消收藏</view>
+				<view class="btn bg-or f-24" wx:else>立即购买</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<!-- 支付方式弹窗 -->
+<template name="pay_type">
+	<view class="pay_popup relative" wx:if="{{pay_type_status}}">
+		<view class="bg fixed" bindtap="payOrderPopupHandle"></view>
+		<view class="content fixed animated slideInUp faster">
+			<view class="tit f36 sub-gray relative t-c bg-ff">确认支付<span class='iconfont iconcuowu absolute f28 gray' bindtap="payOrderPopupHandle"></span></view>
+			<view class="type sizing">
+				<view class="item flex" data-value='10' bindtap="payTypeHandle">
+					<view class="left flex"><span class='iconfont iconqian f46 c-m mr-5'></span></view>
+					<view class="mid f30 sub-gray flex-box">余额</view>
+					<view class="right f30 c-m flex">
+						<view class="icon_wrap flex radius-50 flex sizing {{curPayType == '10' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{curPayType == '10'}}" class='iconfont iconzhengque c-ff f24 bold'></span></view>
+					</view>
+				</view>
+				<view class="item flex" data-value='20' bindtap="payTypeHandle">
+					<view class="left flex"><span class='iconfont iconweixincopy f40 c-m mr-5'></span></view>
+					<view class="mid f30 sub-gray flex-box">微信支付</view>
+					<view class="right f30 c-m flex">
+						<view class="icon_wrap flex radius-50 flex sizing {{curPayType == '20' ? 'bg-m':''}}" bindtap="payTypeHandle"><span wx:if="{{curPayType == '20'}}" class='iconfont iconzhengque c-ff f24 bold'></span></view>
+					</view>
+				</view>
+			</view>
+			<view class="to_pay_btn bg-m c-ff radius-10 f32 t-c" bindtap="onSubmitOrder">立即支付</view>
+		</view>
+	</view>
+</template>
+
+
+<!--评论-->
+<template name="comment">
+	<view class="item b-b sizing flex sizing p-30">
+				<image class="logo radius-50" src="/images/menu1.png"></image>
+				<view class="info_wrap flex-box">
+					<view class="row flex mb-10">
+						<view class="left flex-box">
+							<view class="f-30 onelist mb-10">姓名姓名长度</view>
+							<view class="f-22 gray">2019-10-28 13:17:36</view>
+						</view>
+						<view class="right flex ml-30">
+							<view class="star flex-box flex">
+								<span class="iconfont f-28  {{goods.score >= item ? 'c-m iconstar':'c-a5 iconwujiaoxing2'}}" wx:for="{{[1,2,3,4,5]}}" wx:key="index"></span>
+							</view>
+						</view>
+					</view>
+					<view class="intro">效果不错，漂亮</view>
+					<view class="img_wrap flex">
+						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+						<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+					</view>
+				</view>
+			</view>
+</template>
+
+
+<template name="bargain_copy">
+	<view class="goods-item flex bg-ff sizing p-20 mb-20 radius-10" data-url="{{order ? 'pages/bargain/bargainTask/bargainTask?task_id='+task_id : 'pages/bargain/bargainGoods/bargainGoods?active_id='+active_id}}" bindtap="skipPage">
+		<!-- 商品图片 -->
+		<view class="logo box-220 mr-30 radius-10">
+			<image src="{{ goods.goods_image }}"></image>
+		</view>
+		<view class="goods-detail flex-box flex-dir-col flex-x-b sizing ptb-15">
+			<!-- 商品名称 -->
+			<view class="twolist f-28" style="min-height: 60rpx">{{ goods.goods_name }}</view>
+			<block wx:if="{{order}}">
+				<!-- 砍价进度 -->
+				<view class="task-rate f-26 c-a8 mt-15">
+					<block wx:if="{{ status }}">
+						<text>已砍</text>
+						<text class="c-red">{{ cut_money }}</text>
+						<text>元，</text>
+						<text>只差</text>
+						<text class="c-red">{{ surplus_money }}</text> 
+						<text>元</text>
+					</block>
+					<block wx:if="{{ is_floor }}">
+						<text>已砍至最低</text>
+						<text class="col-m">{{ floor_price }}</text>
+						<text>元</text>
+					</block>
+				</view>
+				<!-- 任务状态 -->
+				<view class="task-status mt-30">
+					<!-- 倒计时 -->
+					<view wx:if="{{ status }}" class="count-down flex flex-x-s f-26">
+						<view class="clock-text mr-10"> <text>剩余</text> </view>
+						<view class="clock flex monospace">
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.day }}</text> </view>
+							<view class="plr-8"> <text>:</text> </view>
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.hou }}</text> </view>
+							<view class="plr-8"> <text>:</text> </view>
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.min }}</text> </view>
+							<view class="plr-8"> <text>:</text> </view>
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>{{ actEndTimeList.sec }}</text> </view>
+						</view>
+					</view>
+					<view wx:if="{{ !status }}" class="mt-30 f-26 lh-50">
+						<text class="c-red">{{ is_buy ? '砍价成功' : '已结束' }}</text>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<!-- 参与的用户头像 -->
+				<view wx:if="{{ helps_count > 0 }}" class="flex flex-x-s">
+					<view class="user-list flex mr-10">
+						<view wx:for="{{ helps }}" wx:for-item="help" wx:for-index="idx" wx:key="this" class="user-item-avatar">
+							<image class="radius-all" src="{{ help.user.avatarUrl }}" style="width: 36rpx;height:36rpx;margin-left: {{idx == 0 ? '0' : '-8rpx'}};"></image>
+						</view>
+					</view>
+					<view class="f-24 f-88"> <text>{{ helps_count }}人正在砍价</text> </view>
+				</view>
+				<view class="flex flex-y-e mt-10">
+					<view>
+						<!-- 商品原价 -->
+						<view class="line-t f-26 c-a8">￥{{ goods.goods_sku.goods_price }}</view>
+						<!-- 砍价低价 -->
+						<view class="c-red f-26">最低￥<text class="f-32">{{ floor_price }}</text></view>
+					</view>
+					<view class="bg-m lh-50 plr-20 radius-10 c-ff f-28">立即参加</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</template>
+
+<!--砍价-->
+<template name="bargain_copy">
+	<view class="goods-item flex bg-ff sizing p-20 mb-20 radius-10" data-url="{{order ? 'pages/bargain/bargainTask/bargainTask?task_id='+task_id : 'pages/bargain/bargainGoods/bargainGoods?active_id='+active_id}}" bindtap="skipPage">
+		<!-- 商品图片 -->
+		<view class="logo box-220 mr-30 radius-10">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+		</view>
+		<view class="goods-detail flex-box flex-dir-col flex-x-b sizing ptb-15">
+			<!-- 商品名称 -->
+			<view class="twolist f-28" style="min-height: 60rpx">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<block wx:if="{{order}}">
+				<!-- 砍价进度 -->
+				<view class="task-rate f-26 c-a8 mt-15">
+					<block wx:if="{{ status }}">
+						<text>已砍</text>
+						<text class="c-red">112</text>
+						<text>元，</text>
+						<text>只差</text>
+						<text class="c-red">2</text> 
+						<text>元</text>
+					</block>
+					<block wx:if="{{ is_floor }}">
+						<text>已砍至最低</text>
+						<text class="col-m">1</text>
+						<text>元</text>
+					</block>
+				</view>
+				<!-- 任务状态 -->
+				<view class="task-status mt-30">
+					<!-- 倒计时 -->
+					<view wx:if="{{ status }}" class="count-down flex flex-x-s f-26">
+						<view class="clock-text mr-10"> <text>剩余</text> </view>
+						<view class="clock flex monospace">
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+							<view class="plr-8"> <text>:</text> </view>
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+							<view class="plr-8"> <text>:</text> </view>
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+							<view class="plr-8"> <text>:</text> </view>
+							<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+						</view>
+					</view>
+					<view wx:if="{{ !status }}" class="mt-30 f-26 lh-50">
+						<text class="c-red">{{ is_buy ? '砍价成功' : '已结束' }}</text>
+					</view>
+				</view>
+			</block>
+			<block wx:else>
+				<!-- 参与的用户头像 -->
+				<view wx:if="{{ helps_count > 0 }}" class="flex flex-x-s">
+					<view class="user-list flex mr-10">
+						<view wx:for="{{ helps }}" wx:for-item="help" wx:for-index="idx" wx:key="this" class="user-item-avatar">
+							<image class="radius-all" src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" style="width: 36rpx;height:36rpx;margin-left: {{idx == 0 ? '0' : '-8rpx'}};"></image>
+						</view>
+					</view>
+					<view class="f-24 f-88"> <text>111人正在砍价</text> </view>
+				</view>
+				<view class="flex flex-y-e mt-10">
+					<view>
+						<!-- 商品原价 -->
+						<view class="line-t f-26 c-a8">￥99.99</view>
+						<!-- 砍价低价 -->
+						<view class="c-red f-26">最低￥<text class="f-32">1.00</text></view>
+					</view>
+					<view class="bg-m lh-50 plr-20 radius-10 c-ff f-28">立即参加</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</template>
+
+<!--秒杀商品-->
+<template name="spckill">
+	<view class="goods-item flex bg-ff sizing ptb-20 plr-30" data-url="pages/goods/goods?id={{goods.goods_id}}&is_rush=1&activity_id={{activity_id}}" bindtap="skipPage">
+		<!-- 商品图片 -->
+		<view class="logo box-220 mr-30 radius-10">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png" mode="aspectFill"></image>
+		</view>
+		<view class="goods-detail flex-box flex-dir-col flex-x-b sizing ptb-15">
+			<!-- 商品名称 -->
+			<view class="twolist f-28" style="min-height: 60rpx">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			<view class="clock flex flex-x-s monospace f-26">
+				<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+				<view class="plr-8"> <text>天</text> </view>
+				<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+				<view class="plr-8"> <text>时</text> </view>
+				<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+				<view class="plr-8"> <text>分</text> </view>
+				<view class="plr-8 lh-40 radius-8 bg-33 c-ff"> <text>12</text> </view>
+				<view class="plr-8"> <text>秒</text> </view>
+			</view>
+			<view class="flex flex-y-e mt-20">
+				<view>
+					<!-- 商品原价 -->
+					<view class="f-26 c-a8">已有100人抢购</view>
+					<!-- 砍价低价 -->
+					<view class="c-red f-26">￥<text class="f-32">99.99</text></view>
+				</view>
+				<view class="bg-or lh-50 plr-20 radius-50 c-ff f-28">立即秒杀</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<!--拼团商品-->
+<template name="sharing">
+	<view class="goods-item flex bg-ff sizing ptb-20 plr-30" data-url="pages/sharing/sharingGoods/sharingGoods?goods_id={{goods_id}}" bindtap="skipPage">
+		<!-- 商品图片 -->
+		<view class="logo box-220 mr-30 radius-10">
+			<image src="https://i.loli.net/2020/05/25/K1yrcPnZXq4gQWA.png"></image>
+		</view>
+		<view class="goods-detail flex-box flex-dir-col flex-x-b sizing ptb-15">
+			<!-- 商品名称 -->
+			<view class="twolist f-28" style="min-height: 60rpx">迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你喷雾迷你</view>
+			
+			<view class="flex flex-x-s f-24 c-red">
+				<text class="iconfont iconkehu mr-5"></text>
+				<text>3人团</text>
+				<text class="c-a8 ml-10">已有100人进行拼团</text>
+			</view>
+			<view class="flex flex-y-e mt-20">
+				<view>
+					<!-- 商品原价 -->
+					<view class="line-t f-26 c-a8">¥34.99</view>
+					<!-- 拼团价格 -->
+					<view class="c-red f-26">￥<text class="f-32">{89.99</text></view>
+				</view>
+				<view class="bg-or lh-50 plr-20 radius-50 c-ff f-28">去拼团</view>
+			</view>
+		</view>
+	</view>
 </template>

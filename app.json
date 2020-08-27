@@ -1,27 +1,23 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/news/news/news",
-    "pages/news/newsDetail/newsDetail",
+    "pages/account/authorize/authorize",
+    "pages/account/phone/phone",
+
     "pages/goods/goods",
-    "pages/store/store",
-    "pages/category/category",
-    "pages/live/live",
+
     "pages/cart/cart",
     "pages/cart_single/cart_single",
-    "pages/mine/mine",
-    "pages/search/goods_his/goods_his",
-    "pages/search/goods/goods",
-    "pages/search/live/live",
-    "pages/order/orderSure/orderSure",
+
     "pages/address/address/address",
     "pages/address/addressAdd/addressAdd",
-    "pages/account/authorize/authorize",
-    "pages/mine/setting/setting",
+    
+    "pages/order/orderSure/orderSure",
     "pages/order/order/order",
     "pages/order/orderDetail/orderDetail",
-    "pages/order/refund/refund",
-    "pages/demo/demo"
+    "pages/order/refund/refund"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,28 +38,10 @@
         "selectedIconPath": "/images/tabbar1-active.png"
       },
       {
-        "pagePath": "pages/category/category",
-        "text": "分类",
-        "iconPath": "/images/tabbar2.png",
-        "selectedIconPath": "/images/tabbar2-active.png"
-      },
-      {
-        "pagePath": "pages/live/live",
-        "text": "直播",
-        "iconPath": "/images/tabbar3.png",
-        "selectedIconPath": "/images/tabbar3-active.png"
-      },
-      {
         "pagePath": "pages/cart/cart",
         "text": "购物车",
         "iconPath": "/images/tabbar4.png",
         "selectedIconPath": "/images/tabbar4-active.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "/images/tabbar5.png",
-        "selectedIconPath": "/images/tabbar5-active.png"
       }
     ]
   },

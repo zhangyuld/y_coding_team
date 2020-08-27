@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "share": "/components/share/share",
-    "y_title": "/components/title/title"
+    "y_share": "/components/share/share",
+    "y_title": "/components/title/title",
+    "y_rule": "/components/rule_dialog/rule_dialog"
   }
 }
