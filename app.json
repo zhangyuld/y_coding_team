@@ -3,21 +3,16 @@
     "pages/index/index",
     "pages/account/authorize/authorize",
     "pages/account/phone/phone",
-
     "pages/goods/goods",
-
+    "pages/goods/commentList/commentList",
     "pages/cart/cart",
     "pages/cart_single/cart_single",
-
     "pages/address/address/address",
     "pages/address/addressAdd/addressAdd",
-    
     "pages/order/orderSure/orderSure",
     "pages/order/order/order",
     "pages/order/orderDetail/orderDetail",
     "pages/order/refund/refund"
-    
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

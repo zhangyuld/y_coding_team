@@ -1,0 +1,27 @@
+<import src="/template/goods/goods.wxml"></import>
+
+<loaded pageShow="{{pageShow}}"></loaded>
+
+<view class="appContainer appraise_wrap">
+  <!--<view class="height"></view>-->
+  <!--<scroll-view class="nav bg-ff fixed" scroll-x enable-flex>
+    <block wx:for="{{nav}}" wx:key="index">
+      <view class="flex-k t-c lh-100 relative onelist flex-four flex-box {{item.type == options.scoreType?'active c-m ':''}}" data-type="{{item.type}}" bindtap="navChoose">{{item.title}}</view>
+    </block>
+  </scroll-view>-->
+  <view class="comment_total flex flex-x-s sizing plr-30 pt-30 bg-ff b-b">
+    <block wx:for="{{comment_count}}" wx:key="index">
+      <view class="item plr-30 lh-50 f-24 radius-50 mr-30 mb-30 {{item.type == options.scoreType?'active bg-m c-ff':''}}" style="background: #FFECEB;" data-type="{{item.type}}" bindtap="navChoose">{{item.title}}({{item.value}})</view>
+    </block>
+  </view>
+
+  <view class="appraise">
+    <template is="comment" data="{{...item,index}}" wx:for="{{ list.data }}" wx:key="this"></template>
+  </view>
+
+  <view  class="no-content" wx:if="{{!list.data.length}}">
+			<image src="/images/empty2.png" mode="widthFix"></image>
+			<text class="cut-line">—— 暂无相关评价 ——</text>
+		</view>
+		<view class="more cut-line" wx:else> —— 我是有底线的 ——</view>
+</view>

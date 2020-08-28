@@ -68,7 +68,7 @@
 
 	<!-- 评论列表 -->
 	<view class="appraise_wrap bg-ff mb-20">
-		<y_title title="精选点评" before="{{true}}" url="pages/commentList/commentList"></y_title>
+		<y_title title="精选点评" before="{{true}}" url="pages/goods/commentList/commentList"></y_title>
 		<view class="appraise">
 			<template is="comment" data="{{...item}}" wx:for="{{[1,2,3,4]}}" wx:key="this" wx:if="{{index<3}}"></template>
 		</view>

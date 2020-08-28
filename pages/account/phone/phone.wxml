@@ -1,6 +1,6 @@
 <view class="container">
   <image class="logoImg" src="/images/logo.jpeg" mode="widthFix"></image>
-  <view class="welcome"><text class="c-m">喜霸王</text>需要获取你的手机号,以获取小程序以及APP的数据统一,你可以使用该手机号登陆喜霸王APP。</view>
+  <view class="welcome"><text class="c-m">WXAPP</text>需要获取你的手机号,以便提供更好的服务。</view>
   <button class="sure bg-m" hover-class="none" open-type="getPhoneNumber" bindgetphonenumber='getPhoneNumber' style="margin-top:30rpx;">快速授权手机号</button>
   <button class="cancle" hover-class="none" bindtap="cancle">取消</button>
 </view>

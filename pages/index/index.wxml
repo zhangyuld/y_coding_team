@@ -119,6 +119,9 @@
 		<view class="list-container sizing plr-20">
 			<template is="goods" data="" />
 		</view>
+		<view class="list-container sizing plr-20">
+			<template is="goods_two" data="" />
+		</view>
 		<view  class="no-content">
 			<image src="/images/empty2.png" mode="widthFix"></image>
 			<text class="cut-line">——没有找到相关的项目——</text>
